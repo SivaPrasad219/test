@@ -1,0 +1,77 @@
+{
+  "jobID": "123456789",
+  "taskSequence": ["task1", "task2", "task3"],
+  "tasks": [
+    {
+      "taskID": "task1",
+      "taskName": "renderSearch",
+      "visible": true,
+      "search": {
+        "dropdownOptions": [
+          { "label": "First Name", "value": "firstname" },
+          { "label": "Last Name", "value": "lastname" },
+          { "label": "User Name", "value": "username" },
+          { "label": "Email ID", "value": "email" },
+          { "label": "Site Name", "value": "user__site___name" },
+          { "label": "Role", "value": "user__role___name" }
+        ]
+      }
+    },
+    {
+      "taskID": "task2",
+      "taskName": "renderTable",
+      "visible": true,
+      "table": {
+        "columns": [
+          { "title": "First Name", "page": "users", "dataIndex": "firstname" },
+          { "title": "Last Name", "page": "users", "dataIndex": "lastname" },
+          { "title": "User Name", "page": "users", "dataIndex": "username" },
+          {
+            "title": "Org Name",
+            "page": "users",
+            "dataIndex": "customer_code"
+          },
+          { "title": "Email ID", "page": "users", "dataIndex": "email" },
+          {
+            "title": "Site Name",
+            "page": "users",
+            "dataIndex": "user__site___name"
+          },
+          {
+            "title": "Role",
+            "page": "users",
+            "dataIndex": "user__role___name"
+          },
+          {
+            "title": "Status",
+
+            "page": "users",
+            "dataIndex": "user__user___status"
+          },
+          {
+            "title": "Edit",
+
+            "page": "users",
+            "dataIndex": "edit"
+          }
+        ],
+        "api": {
+          "url": "/pm/user",
+          "authToken": "YOUR_AUTH_TOKEN",
+          "clientId": "merck"
+        },
+        "defaultOrderBy": "audit_events.id",
+        "defaultLimit": 10,
+        "defaultStrict": "no"
+      }
+    },
+    {
+      "taskID": "task3",
+      "taskName": "renderPagination",
+      "visible": true,
+      "pagination": {
+        "totalCount": 0
+      }
+    }
+  ]
+}

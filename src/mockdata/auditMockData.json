@@ -1,0 +1,44 @@
+{
+  "id": 1,
+  "name": "Audit Page",
+  "jobs": [
+    {
+      "id": 1,
+      "name": "Render Audit Table",
+      "tasks": [
+        {
+          "id": 1,
+          "name": "Audit Table",
+          "type": "defineColumns",
+          "columns": [
+            { "title": "ID", "dataIndex": "id" },
+            { "title": "Instrument ID", "dataIndex": "deviceId" },
+            { "title": "Instrument Name", "dataIndex": "deviceName" },
+            { "title": "Event", "dataIndex": "event" },
+            { "title": "Operator", "dataIndex": "operator" },
+            { "title": "Action ID", "dataIndex": "deviceActionId" },
+            { "title": "Continuous Run ID", "dataIndex": "continuousRunId" },
+            { "title": "Timestamp", "dataIndex": "timestamp" },
+            { "title": "Comments", "dataIndex": "comments" }
+          ]
+        },
+        {
+          "id": 2,
+          "name": "Search",
+          "type": "search",
+          "columns": [
+            { "title": "ID", "dataIndex": "id" },
+            { "title": "Instrument ID", "dataIndex": "deviceId" },
+            { "title": "Instrument Name", "dataIndex": "deviceName" },
+            { "title": "Event", "dataIndex": "event" },
+            { "title": "Operator", "dataIndex": "operator" },
+            { "title": "Action ID", "dataIndex": "deviceActionId" },
+            { "title": "Continuous Run ID", "dataIndex": "continuousRunId" },
+            { "title": "Timestamp", "dataIndex": "timestamp" },
+            { "title": "Comments", "dataIndex": "comments" }
+          ]
+        }
+      ]
+    }
+  ]
+}

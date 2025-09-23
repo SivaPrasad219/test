@@ -1,0 +1,58 @@
+{
+  "id": 3,
+  "name": "Super Admin Workflow",
+  "jobs": [
+    {
+      "id": 1,
+      "name": "Create Menu",
+      "tasks": [
+        {
+          "id": 1,
+          "name": "Render Menu",
+          "type": "renderMenu",
+          "items": [{ "name": "Clients", "url": "/clients" }]
+        },
+
+        {
+          "id": 2,
+          "name": "Render Logo",
+          "type": "renderLogo",
+          "details": {
+            "imagePath": "phizzle-logo.png",
+            "altText": "Company Logo",
+            "link": "/home"
+          }
+        },
+        {
+          "id": 3,
+          "name": "Render Avatar",
+          "type": "renderAvatar",
+          "details": {
+            "imagePath": "generic-avatar.png",
+            "altText": "User Avatar",
+            "link": "/home"
+          }
+        },
+        {
+          "id": 4,
+          "name": "Logout",
+          "type": "action",
+          "details": {
+            "text": "Logout",
+            "actionType": "logout",
+            "targetUrl": "/login"
+          }
+        },
+        {
+          "id": 5,
+          "name": "Render Footer",
+          "type": "renderFooter",
+          "details": {
+            "versionText": "Version v2.5",
+            "copyrightText": "© 2025 Phizzle, Inc."
+          }
+        }
+      ]
+    }
+  ]
+}

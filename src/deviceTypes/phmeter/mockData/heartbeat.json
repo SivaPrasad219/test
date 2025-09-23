@@ -1,0 +1,250 @@
+{
+    "ideal_state": {
+        "name": "CI-3100",
+        "model": "CI-3100-26-1-4-6",
+        "category": "instruments",
+        "asset_id": "Climet3100Sim-03:07:08:01:01:01",
+        "asset_time": "2024-06-20T11:35:08.036Z",
+        "meta": [
+            {}
+        ],
+        "types": [
+            "Air Particle Counter"
+        ],
+        "notes": [
+            "1 Cubic Foot Per Minute",
+            "0.5µm",
+            "5.0µm",
+            "115vac",
+            "External Exhaust"
+        ],
+        "manufacturer": "Climet",
+        "device_status": "Connected",
+        "tasks": {},
+        "last_task_id": ""
+    },
+    "sample_single_running_state": {
+        "name": "CI-3100",
+        "model": "CI-3100-26-1-4-6",
+        "category": "instruments",
+        "asset_id": "Climet3100Sim-03:07:08:01:01:01",
+        "asset_time": "2024-06-20T11:40:56.052Z",
+        "meta": [
+            {}
+        ],
+        "types": [
+            "Air Particle Counter"
+        ],
+        "notes": [
+            "1 Cubic Foot Per Minute",
+            "0.5µm",
+            "5.0µm",
+            "115vac",
+            "External Exhaust"
+        ],
+        "manufacturer": "Climet",
+        "device_status": "running",
+        "tasks": {
+            "140": {
+                "nice_name": "0.5µm and 5.0µm Air Particle Count CFM",
+                "start_time": "2024-06-20T11:40:52.906Z",
+                "time_limit": "6000.00s",
+                "run_time": "3.12s",
+                "time_limit_remaining": "5996.88s",
+                "status": "running",
+                "status_msg": "",
+                "params": {
+                    "job_id": 39,
+                    "values": {
+                        "volume": 1,
+                        "volume_units": {
+                            "full": "Cubic Feet",
+                            "short": "CF"
+                        }
+                    },
+                    "operator": "naveen_op",
+                    "task_def_id": "CI-3100_0.5_5.0_air_particle_count_cfm_v1.0",
+                    "asset_id": "Climet3100Sim-03:07:08:01:01:01",
+                    "asset_type_id": 1,
+                    "asset_pid": 1,
+                    "asset_name": "CLIMET-3100",
+                    "id": "140",
+                    "sample_type": "Sample-Single",
+                    "source": "IN-HOUSE"
+                },
+                "results": {
+                    "id": "d13a4a6c3ffe487bbd754733d7efdc7d",
+                    "time": "2024-06-20T11:40:56.027Z",
+                    "status": "partial",
+                    "status_msg": "In-Progress",
+                    "data": {
+                        "device_info": {
+                            "location_name": "unknown",
+                            "Calibration_date": "unknown",
+                            "Firmware": "unknown",
+                            "sampledata": {
+                                "cumulativedata": [
+                                    {
+                                        "0.5 μm": 22
+                                    },
+                                    {
+                                        "5.0 μm": 4
+                                    }
+                                ],
+                                "differentialdata": [
+                                    {
+                                        "0.5 μm": 0
+                                    },
+                                    {
+                                        "5.0 μm": 0
+                                    }
+                                ]
+                            }
+                        },
+                        "volume": 1,
+                        "start_time": "2024-06-20T11:40:52.906Z",
+                        "volume_units": {
+                            "short": "CF",
+                            "full": "Cubic Feet"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "sample_single_complete_state": {
+        "name": "CI-3100",
+        "model": "CI-3100-26-1-4-6",
+        "category": "instruments",
+        "asset_id": "Climet3100Sim-03:07:08:01:01:01",
+        "asset_time": "2024-06-20T11:42:38.038Z",
+        "meta": [
+            {}
+        ],
+        "types": [
+            "Air Particle Counter"
+        ],
+        "notes": [
+            "1 Cubic Foot Per Minute",
+            "0.5µm",
+            "5.0µm",
+            "115vac",
+            "External Exhaust"
+        ],
+        "manufacturer": "Climet",
+        "device_status": "Connected",
+        "tasks": {}
+    },
+    "sample_continues_running_state": {
+        "name": "CI-3100",
+        "model": "CI-3100-26-1-4-6",
+        "category": "instruments",
+        "asset_id": "Climet3100Sim-03:07:08:01:01:01",
+        "asset_time": "2024-06-20T11:46:24.096Z",
+        "meta": [
+            {}
+        ],
+        "types": [
+            "Air Particle Counter"
+        ],
+        "notes": [
+            "1 Cubic Foot Per Minute",
+            "0.5µm",
+            "5.0µm",
+            "115vac",
+            "External Exhaust"
+        ],
+        "manufacturer": "Climet",
+        "device_status": "running",
+        "tasks": {
+            "143": {
+                "nice_name": "0.5µm and 5.0µm Air Particle Count CFM",
+                "start_time": "2024-06-20T11:46:17.608Z",
+                "time_limit": "6000.00s",
+                "run_time": "6.46s",
+                "time_limit_remaining": "5993.54s",
+                "status": "running",
+                "status_msg": "",
+                "params": {
+                    "job_id": 40,
+                    "values": {
+                        "volume": 1,
+                        "volume_units": {
+                            "full": "Cubic Feet",
+                            "short": "CF"
+                        }
+                    },
+                    "operator": "naveen_op",
+                    "task_def_id": "CI-3100_0.5_5.0_air_particle_count_cfm_v1.0",
+                    "asset_id": "Climet3100Sim-03:07:08:01:01:01",
+                    "asset_type_id": 1,
+                    "asset_pid": 1,
+                    "asset_name": "CLIMET-3100",
+                    "id": "143",
+                    "sample_type": "Sample-Continuous Run",
+                    "source": "IN-HOUSE"
+                },
+                "results": {
+                    "id": "8e6aa4855c6640669ea4a8d67d480b61",
+                    "time": "2024-06-20T11:46:24.067Z",
+                    "status": "partial",
+                    "status_msg": "In-Progress",
+                    "data": {
+                        "device_info": {
+                            "location_name": "unknown",
+                            "Calibration_date": "unknown",
+                            "Firmware": "unknown",
+                            "sampledata": {
+                                "cumulativedata": [
+                                    {
+                                        "0.5 μm": 55
+                                    },
+                                    {
+                                        "5.0 μm": 10
+                                    }
+                                ],
+                                "differentialdata": [
+                                    {
+                                        "0.5 μm": 0
+                                    },
+                                    {
+                                        "5.0 μm": 0
+                                    }
+                                ]
+                            }
+                        },
+                        "volume": 1,
+                        "start_time": "2024-06-20T11:46:17.608Z",
+                        "volume_units": {
+                            "short": "CF",
+                            "full": "Cubic Feet"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "sample_continues_complete_state":{
+        "name": "CI-3100",
+        "model": "CI-3100-26-1-4-6",
+        "category": "instruments",
+        "asset_id": "Climet3100Sim-03:07:08:01:01:01",
+        "asset_time": "2024-06-20T11:51:42.094Z",
+        "meta": [
+            {}
+        ],
+        "types": [
+            "Air Particle Counter"
+        ],
+        "notes": [
+            "1 Cubic Foot Per Minute",
+            "0.5µm",
+            "5.0µm",
+            "115vac",
+            "External Exhaust"
+        ],
+        "manufacturer": "Climet",
+        "device_status": "Connected",
+        "tasks": {}
+    }
+}

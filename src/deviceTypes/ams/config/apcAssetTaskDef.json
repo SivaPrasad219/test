@@ -1,0 +1,593 @@
+[
+    {
+        "asset_id": "ID-CI-3100-X-Y-Z-01:02:03:04:05:07",
+        "task_def_id": "sample_start",
+        "created_date": "2024-05-05T06:46:09.758Z",
+        "last_updated_date": "2024-05-05T06:46:09.758Z",
+        "nice_name": "Sample - Single",
+        "meta": {
+            "input": {
+                "type": "object",
+                "required": [
+                    "volume",
+                    "value",
+                    "delayTime"
+                ],
+                "properties": {
+                    "volume": {
+                        "type": "string",
+                        "required": true,
+                        "x-unit": [
+                            "Cubic Feet",
+                            "Cubic Meter",
+                            "Liters"
+                        ],
+                        "maximum": 100,
+                        "minimum": 1,
+                        "x-unit-short": [
+                            "CF",
+                            "CM",
+                            "L"
+                        ]
+                    },
+                    "value": {
+                        "type": "integer",
+                        "required": true,
+                        "x-unit": [
+                            "Cubic Feet",
+                            "Cubic Meter",
+                            "Liters"
+                        ],
+                        "maximum": 100,
+                        "minimum": 1,
+                        "x-unit-short": [
+                            "CF",
+                            "CM",
+                            "L"
+                        ]
+                    },
+                    "delayTime": {
+                        "type": "string",
+                        "x-unit": "Seconds",
+                        "maximum": 36000,
+                        "minimum": 0,
+                        "required": true,
+                        "x-nice-name": "Meta Heartbeat Delay Time",
+                        "x-unit-short": "secs"
+                    },
+                    "location": {
+                        "type": "string",
+                        "x-unit": "",
+                        "required": true,
+                        "maximum": 100,
+                        "minimum": 1,
+                        "x-unit-short": [
+                            "CF",
+                            "CM",
+                            "L"
+                        ]
+                    }
+                },
+                "table": false
+
+            },
+            "output": {
+                "type": "object",
+                "properties": {
+                    "volume": {
+                        "type": "integer",
+                        "x-unit": "Cubic Feet",
+                        "maximum": 100,
+                        "minimum": 1,
+                        "required": true,
+                        "x-nice-name": "Air Volume",
+                        "x-unit-short": "cf"
+                    },
+                    "end_time": {
+                        "type": "string",
+                        "format": "date-time",
+                        "x-unit": "Date Time",
+                        "required": true,
+                        "x-nice-name": "End Time",
+                        "x-unit-short": ""
+                    },
+                    "0_5_count": {
+                        "type": "integer",
+                        "x-unit": "5.0 Micro Meters",
+                        "maximum": 35300000,
+                        "minimum": 0,
+                        "required": true,
+                        "x-nice-name": "5.0µm Count",
+                        "x-unit-short": "5.0µm"
+                    },
+                    "5_0_count": {
+                        "type": "integer",
+                        "x-unit": "0.5 Micro Meters",
+                        "maximum": 35300000,
+                        "minimum": 0,
+                        "required": true,
+                        "x-nice-name": "0.5µm Count",
+                        "x-unit-short": "0.5µm"
+                    },
+                    "start_time": {
+                        "type": "string",
+                        "format": "date-time",
+                        "x-unit": "Time",
+                        "required": true,
+                        "x-nice-name": "Start Time",
+                        "x-unit-short": ""
+                    }
+                }
+            },
+            "reqStateToStart": "idle"
+
+        },
+        "to_publish": true,
+        "input_validation_required": true,
+        "output_validation_required": true
+    },
+    {
+        "asset_id": "ID-CI-3100-X-Y-Z-01:02:03:04:05:07",
+        "task_def_id": "sample_flush",
+        "created_date": "2024-05-05T06:46:09.758Z",
+        "last_updated_date": "2024-05-05T06:46:09.758Z",
+        "nice_name": "Flush - Single",
+        "meta": {
+            "input": {
+                "type": "object",
+                "required": [
+                    "volume",
+                    "value",
+                    "delayTime"
+                ],
+                "properties": {
+                    "volume": {
+                        "type": "string",
+                        "required": true,
+                        "x-unit": [
+                            "Cubic Feet",
+                            "Cubic Meter",
+                            "Liters"
+                        ],
+                        "maximum": 100,
+                        "minimum": 1,
+                        "x-unit-short": [
+                            "CF",
+                            "CM",
+                            "L"
+                        ]
+                    },
+                    "value": {
+                        "type": "integer",
+                        "required": true,
+                        "x-unit": [
+                            "Cubic Feet",
+                            "Cubic Meter",
+                            "Liters"
+                        ],
+                        "maximum": 100,
+                        "minimum": 1,
+                        "x-unit-short": [
+                            "CF",
+                            "CM",
+                            "L"
+                        ]
+                    },
+                    "delayTime": {
+                        "type": "string",
+                        "x-unit": "Seconds",
+                        "maximum": 36000,
+                        "minimum": 0,
+                        "required": true,
+                        "x-nice-name": "Meta Heartbeat Delay Time",
+                        "x-unit-short": "secs"
+                    },
+                    "location": {
+                        "type": "string",
+                        "x-unit": "",
+                        "maximum": 100,
+                        "minimum": 1,
+                        "x-unit-short": [
+                            "CF",
+                            "CM",
+                            "L"
+                        ]
+                    }
+                },
+                "table": false
+            },
+            "output": {
+                "type": "object",
+                "properties": {
+                    "volume": {
+                        "type": "integer",
+                        "x-unit": "Cubic Feet",
+                        "maximum": 100,
+                        "minimum": 1,
+                        "required": true,
+                        "x-nice-name": "Air Volume",
+                        "x-unit-short": "cf"
+                    },
+                    "end_time": {
+                        "type": "string",
+                        "format": "date-time",
+                        "x-unit": "Date Time",
+                        "required": true,
+                        "x-nice-name": "End Time",
+                        "x-unit-short": ""
+                    },
+                    "0_5_count": {
+                        "type": "integer",
+                        "x-unit": "5.0 Micro Meters",
+                        "maximum": 35300000,
+                        "minimum": 0,
+                        "required": true,
+                        "x-nice-name": "5.0µm Count",
+                        "x-unit-short": "5.0µm"
+                    },
+                    "5_0_count": {
+                        "type": "integer",
+                        "x-unit": "0.5 Micro Meters",
+                        "maximum": 35300000,
+                        "minimum": 0,
+                        "required": true,
+                        "x-nice-name": "0.5µm Count",
+                        "x-unit-short": "0.5µm"
+                    },
+                    "start_time": {
+                        "type": "string",
+                        "format": "date-time",
+                        "x-unit": "Time",
+                        "required": true,
+                        "x-nice-name": "Start Time",
+                        "x-unit-short": ""
+                    }
+                }
+            },
+            "reqStateToStart": "idle"
+        },
+        "to_publish": true,
+        "input_validation_required": true,
+        "output_validation_required": true
+    },
+    {
+        "asset_id": "ID-CI-3100-X-Y-Z-01:02:03:04:05:07",
+        "task_def_id": "continuous_run_sample",
+        "created_date": "2024-05-05T06:46:09.758Z",
+        "last_updated_date": "2024-05-05T06:46:09.758Z",
+        "nice_name": "Sample - Continuous Run",
+        "meta": {
+            "input": {
+                "type": "object",
+                "required": [
+                    "volume",
+                    "value",
+                    "delayTime",
+                    "table"
+                ],
+                "properties": {
+                    "volume": {
+                        "type": "string",
+                        "required": true,
+                        "x-unit": [
+                            "Cubic Feet",
+                            "Cubic Meter",
+                            "Liters"
+                        ],
+                        "maximum": 100,
+                        "minimum": 1,
+                        "x-unit-short": [
+                            "CF",
+                            "CM",
+                            "L"
+                        ]
+                    },
+                    "value": {
+                        "type": "integer",
+                        "required": true,
+                        "x-unit": [
+                            "Cubic Feet",
+                            "Cubic Meter",
+                            "Liters"
+                        ],
+                        "maximum": 100,
+                        "minimum": 1,
+                        "x-unit-short": [
+                            "CF",
+                            "CM",
+                            "L"
+                        ]
+                    },
+                    "delayTime": {
+                        "type": "string",
+                        "x-unit": "Seconds",
+                        "maximum": 36000,
+                        "minimum": 0,
+                        "required": true,
+                        "x-nice-name": "Meta Heartbeat Delay Time",
+                        "x-unit-short": "secs"
+                    },
+                    "location": {
+                        "type": "string",
+                        "x-unit": "",
+                        "maximum": 100,
+                        "required": true,
+                        "minimum": 1,
+                        "x-unit-short": [
+                            "CF",
+                            "CM",
+                            "L"
+                        ]
+                    }
+                },
+                "table": true
+
+            },
+            "output": {
+                "type": "object",
+                "properties": {
+                    "volume": {
+                        "type": "integer",
+                        "x-unit": "Cubic Feet",
+                        "maximum": 100,
+                        "minimum": 1,
+                        "required": true,
+                        "x-nice-name": "Air Volume",
+                        "x-unit-short": "cf"
+                    },
+                    "end_time": {
+                        "type": "string",
+                        "format": "date-time",
+                        "x-unit": "Date Time",
+                        "required": true,
+                        "x-nice-name": "End Time",
+                        "x-unit-short": ""
+                    },
+                    "0_5_count": {
+                        "type": "integer",
+                        "x-unit": "5.0 Micro Meters",
+                        "maximum": 35300000,
+                        "minimum": 0,
+                        "required": true,
+                        "x-nice-name": "5.0µm Count",
+                        "x-unit-short": "5.0µm"
+                    },
+                    "5_0_count": {
+                        "type": "integer",
+                        "x-unit": "0.5 Micro Meters",
+                        "maximum": 35300000,
+                        "minimum": 0,
+                        "required": true,
+                        "x-nice-name": "0.5µm Count",
+                        "x-unit-short": "0.5µm"
+                    },
+                    "start_time": {
+                        "type": "string",
+                        "format": "date-time",
+                        "x-unit": "Time",
+                        "required": true,
+                        "x-nice-name": "Start Time",
+                        "x-unit-short": ""
+                    }
+                }
+            },
+            "reqStateToStart": "idle"
+        },
+        "to_publish": true,
+        "input_validation_required": true,
+        "output_validation_required": true
+    },
+    {
+        "asset_id": "ID-CI-3100-X-Y-Z-01:02:03:04:05:07",
+        "task_def_id": "continuous_run_flush",
+        "created_date": "2024-05-05T06:46:09.758Z",
+        "last_updated_date": "2024-05-05T06:46:09.758Z",
+        "nice_name": "Flush - Continuous Run",
+        "meta": {
+            "input": {
+                "type": "object",
+                "required": [
+                    "volume",
+                    "value",
+                    "delayTime",
+                    "table"
+                ],
+                "properties": {
+                    "volume": {
+                        "type": "string",
+                        "required": true,
+                        "x-unit": [
+                            "Cubic Feet",
+                            "Cubic Meter",
+                            "Liters"
+                        ],
+                        "maximum": 100,
+                        "minimum": 1,
+                        "x-unit-short": [
+                            "CF",
+                            "CM",
+                            "L"
+                        ]
+                    },
+                    "value": {
+                        "type": "integer",
+                        "required": true,
+                        "x-unit": [
+                            "Cubic Feet",
+                            "Cubic Meter",
+                            "Liters"
+                        ],
+                        "maximum": 100,
+                        "minimum": 1,
+                        "x-unit-short": [
+                            "CF",
+                            "CM",
+                            "L"
+                        ]
+                    },
+                    "delayTime": {
+                        "type": "string",
+                        "x-unit": "Seconds",
+                        "maximum": 36000,
+                        "minimum": 0,
+                        "required": true,
+                        "x-nice-name": "Meta Heartbeat Delay Time",
+                        "x-unit-short": "secs"
+                    },
+                    "location": {
+                        "type": "string",
+                        "x-unit": "",
+                        "maximum": 100,
+                        "required": true,
+                        "minimum": 1,
+                        "x-unit-short": [
+                            "CF",
+                            "CM",
+                            "L"
+                        ]
+                    }
+                },
+                "table": true
+            },
+            "output": {
+                "type": "object",
+                "properties": {
+                    "volume": {
+                        "type": "integer",
+                        "x-unit": "Cubic Feet",
+                        "maximum": 100,
+                        "minimum": 1,
+                        "required": true,
+                        "x-nice-name": "Air Volume",
+                        "x-unit-short": "cf"
+                    },
+                    "end_time": {
+                        "type": "string",
+                        "format": "date-time",
+                        "x-unit": "Date Time",
+                        "required": true,
+                        "x-nice-name": "End Time",
+                        "x-unit-short": ""
+                    },
+                    "0_5_count": {
+                        "type": "integer",
+                        "x-unit": "5.0 Micro Meters",
+                        "maximum": 35300000,
+                        "minimum": 0,
+                        "required": true,
+                        "x-nice-name": "5.0µm Count",
+                        "x-unit-short": "5.0µm"
+                    },
+                    "5_0_count": {
+                        "type": "integer",
+                        "x-unit": "0.5 Micro Meters",
+                        "maximum": 35300000,
+                        "minimum": 0,
+                        "required": true,
+                        "x-nice-name": "0.5µm Count",
+                        "x-unit-short": "0.5µm"
+                    },
+                    "start_time": {
+                        "type": "string",
+                        "format": "date-time",
+                        "x-unit": "Time",
+                        "required": true,
+                        "x-nice-name": "Start Time",
+                        "x-unit-short": ""
+                    }
+                }
+            },
+            "reqStateToStart": "idle"
+        },
+        "to_publish": true,
+        "input_validation_required": true,
+        "output_validation_required": true
+    }
+]
+
+
+// {
+//     alert_profile: {
+//       x_nice_name: "Test 123",
+//       x_unit: "Seconds",
+//       x_unit_short: "Sec",
+//       label: "Test",
+//       type: "integer",
+//       minimum: 0,
+//       maximum: 360,
+//       default: 5,
+//     },
+//     delay_time: {
+//       x_nice_name: "Delay Time",
+//       x_unit: "Seconds",
+//       x_unit_short: "Sec",
+//       label: "Delay",
+//       type: "integer",
+//       minimum: 0,
+//       maximum: 360,
+//       default: 5,
+//     },
+//     volume: {
+//       oneOf: [
+//         {
+//           type: "object",
+//           required: ["value", "unit"],
+//           properties: {
+//             unit: {
+//               x_nice_name: "Cubic Feet",
+//               type: "string",
+//               const: "CF",
+//             },
+//             value: {
+//               type: "integer",
+//               minimum: 1,
+//               maximum: 10000,
+//             },
+//           },
+//         },
+//         {
+//           type: "object",
+//           required: ["value", "unit"],
+//           properties: {
+//             unit: {
+//               x_nice_name: "Liters",
+//               type: "string",
+//               const: "L",
+//             },
+//             value: {
+//               type: "integer",
+//               minimum: 1,
+//               maximum: 10000,
+//             },
+//           },
+//         },
+//         {
+//           type: "object",
+//           required: ["value", "unit"],
+//           properties: {
+//             unit: {
+//               x_nice_name: "Cubic Meter",
+//               type: "string",
+//               const: "CM",
+//             },
+//             value: {
+//               type: "integer",
+//               minimum: 1,
+//               maximum: 10000,
+//             },
+//           },
+//         },
+//       ],
+//     },
+//     // New property with type "float"
+//     temperature: {
+//       x_nice_name: "Temperature",
+//       x_unit: "Celsius",
+//       x_unit_short: "°C",
+//       label: "Temp",
+//       type: "number", // For float type, use "number"
+//       minimum: -50,
+//       maximum: 100,
+//       default: 20,
+//     },
+//   }

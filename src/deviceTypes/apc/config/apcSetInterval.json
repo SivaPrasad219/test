@@ -1,0 +1,53 @@
+{
+  "sample_interval_info": {
+    "type": "object",
+    "required": ["duration", "interval", "delay_period"],
+    "properties": {
+      "duration": {
+        "type": "object",
+        "required": ["value", "unit"],
+        "properties": {
+          "value": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 365,
+            "x_nice_name": "Duration"
+          },
+          "unit": {
+            "type": "string",
+            "enum": ["hours", "weeks", "days", "months"],
+            "default": "hours",
+            "x_nice_name": "Duration Unit"
+          }
+        }
+      },
+      "interval": {
+        "type": "object",
+        "required": ["value", "unit"],
+        "properties": {
+          "value": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 1440,
+            "x_nice_name": "Interval"
+          },
+          "unit": {
+            "type": "string",
+            "enum": ["minutes", "hours"],
+            "default": "minutes",
+            "x_nice_name": "Interval Unit"
+          }
+        }
+      },
+      "delay_period": {
+        "type": "integer",
+        "minimum": 0,
+        "maximum": 360,
+        "default": 5,
+        "x_nice_name": "Initial Delay",
+        "x_unit": "Seconds",
+        "x_unit_short": "Sec"
+      }
+    }
+  }
+}

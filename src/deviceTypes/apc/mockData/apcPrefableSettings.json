@@ -1,0 +1,470 @@
+[
+  {
+    "name": "SAMPLE_SINGLE_EVERY_MONTH",
+    "asset_id": "5158",
+    "sample_type": "Sample-Single",
+    "input": {
+      "type": "object",
+      "required": ["volume"],
+      "properties": {
+        "volume": {
+          "oneOf": [
+            {
+              "type": "object",
+              "required": ["value", "unit"],
+              "properties": {
+                "unit": {
+                  "type": "string",
+                  "const": "CF",
+                  "default": "CF",
+                  "x_nice_name": "Cubic Feet"
+                },
+                "value": {
+                  "type": "number",
+                  "maximum": 200,
+                  "minimum": 0.1,
+                  "multipleOf": 0.1,
+                  "default": 10
+                }
+              }
+            }
+          ]
+        },
+        "delay_time": {
+          "type": "integer",
+          "label": "Delay",
+          "x_unit": "Seconds",
+          "default": 10,
+          "maximum": 360,
+          "minimum": 0,
+          "x_nice_name": "Delay Time",
+          "x_unit_short": "Sec"
+        }
+      }
+    }
+  },
+  {
+    "name": "FLUSH_SINGLE_EVERY_MONTH",
+    "asset_id": "5158",
+    "sample_type": "Flush-Single",
+    "input": {
+      "type": "object",
+      "required": ["volume"],
+      "properties": {
+        "volume": {
+          "oneOf": [
+            {
+              "type": "object",
+              "required": ["value", "unit"],
+              "properties": {
+                "unit": {
+                  "type": "string",
+                  "const": "CF",
+                  "default": "CF",
+                  "x_nice_name": "Cubic Feet"
+                },
+                "value": {
+                  "type": "number",
+                  "maximum": 200,
+                  "minimum": 0.1,
+                  "multipleOf": 0.1,
+                  "default": 10
+                }
+              }
+            }
+          ]
+        },
+        "delay_time": {
+          "type": "integer",
+          "label": "Delay",
+          "x_unit": "Seconds",
+          "default": 10,
+          "maximum": 360,
+          "minimum": 0,
+          "x_nice_name": "Delay Time",
+          "x_unit_short": "Sec"
+        }
+      }
+    }
+  },
+  {
+    "name": "SAMPLE_CR_EVERY_MONTH",
+    "asset_id": "5158",
+    "sample_type": "Sample-Continuous Run",
+    "input": {
+      "type": "object",
+      "required": ["volume"],
+      "properties": {
+        "volume": {
+          "oneOf": [
+            {
+              "type": "object",
+              "required": ["value", "unit"],
+              "properties": {
+                "unit": {
+                  "type": "string",
+                  "const": "CF",
+                  "default": "CF",
+                  "x_nice_name": "Cubic Feet"
+                },
+                "value": {
+                  "type": "number",
+                  "maximum": 200,
+                  "minimum": 0.1,
+                  "multipleOf": 0.1,
+                  "default": 10
+                }
+              }
+            },
+            {
+              "type": "object",
+              "required": ["value", "unit"],
+              "properties": {
+                "unit": {
+                  "type": "string",
+                  "const": "L",
+                  "default": "L",
+                  "x_nice_name": "Liters"
+                },
+                "value": {
+                  "type": "integer",
+                  "maximum": 9999,
+                  "minimum": 5,
+                  "default": 10
+                }
+              }
+            },
+            {
+              "type": "object",
+              "required": ["value", "unit"],
+              "properties": {
+                "unit": {
+                  "type": "string",
+                  "const": "CM",
+                  "default": "CM",
+                  "x_nice_name": "Cubic Meter"
+                },
+                "value": {
+                  "type": "number",
+                  "maximum": 10000,
+                  "minimum": 0.01,
+                  "multipleOf": 0.1,
+                  "default": 10
+                }
+              }
+            }
+          ]
+        },
+        "delay_time": {
+          "type": "integer",
+          "label": "Delay",
+          "x_unit": "Seconds",
+          "default": 10,
+          "maximum": 360,
+          "minimum": 0,
+          "x_nice_name": "Delay Time",
+          "x_unit_short": "Sec"
+        }
+      }
+    },
+    "table_data": [
+      {
+        "volume": {
+          "value": 1,
+          "unit": "CF"
+        },
+        "delay_time": 10,
+        "id": 0,
+        "volumeUnit": "Cubic Feet"
+      },
+      {
+        "volume": {
+          "value": 2,
+          "unit": "CF"
+        },
+        "delay_time": 10,
+        "id": 0,
+        "volumeUnit": "Cubic Feet"
+      },
+      {
+        "volume": {
+          "value": 4,
+          "unit": "CF"
+        },
+        "delay_time": 10,
+        "id": 0,
+        "volumeUnit": "Cubic Feet"
+      },
+      {
+        "volume": {
+          "value": 10,
+          "unit": "CF"
+        },
+        "delay_time": 10,
+        "id": 0,
+        "volumeUnit": "Cubic Feet"
+      },
+      {
+        "volume": {
+          "value": 1,
+          "unit": "CF"
+        },
+        "delay_time": 10,
+        "id": 0,
+        "volumeUnit": "Cubic Feet"
+      }
+    ]
+  },
+  {
+    "name": "FLUSH_CR_EVERY_MONTH",
+    "asset_id": "5158",
+    "sample_type": "Flush-Continuous Run",
+    "input": {
+      "type": "object",
+      "required": ["volume"],
+      "properties": {
+        "volume": {
+          "oneOf": [
+            {
+              "type": "object",
+              "required": ["value", "unit"],
+              "properties": {
+                "unit": {
+                  "type": "string",
+                  "const": "CF",
+                  "default": "CF",
+                  "x_nice_name": "Cubic Feet"
+                },
+                "value": {
+                  "type": "number",
+                  "maximum": 200,
+                  "minimum": 0.1,
+                  "multipleOf": 0.1,
+                  "default": 10
+                }
+              }
+            },
+            {
+              "type": "object",
+              "required": ["value", "unit"],
+              "properties": {
+                "unit": {
+                  "type": "string",
+                  "const": "L",
+                  "default": "L",
+                  "x_nice_name": "Liters"
+                },
+                "value": {
+                  "type": "integer",
+                  "maximum": 9999,
+                  "minimum": 5,
+                  "default": 10
+                }
+              }
+            },
+            {
+              "type": "object",
+              "required": ["value", "unit"],
+              "properties": {
+                "unit": {
+                  "type": "string",
+                  "const": "CM",
+                  "default": "CM",
+                  "x_nice_name": "Cubic Meter"
+                },
+                "value": {
+                  "type": "number",
+                  "maximum": 10000,
+                  "minimum": 0.01,
+                  "multipleOf": 0.1,
+                  "default": 10
+                }
+              }
+            }
+          ]
+        },
+        "delay_time": {
+          "type": "integer",
+          "label": "Delay",
+          "x_unit": "Seconds",
+          "default": 10,
+          "maximum": 360,
+          "minimum": 0,
+          "x_nice_name": "Delay Time",
+          "x_unit_short": "Sec"
+        }
+      }
+    },
+    "table_data": [
+      {
+        "id": 1,
+        "sample_type": "Flush-Continuous Run",
+        "volume": {
+          "value": 35,
+          "unit": "CF"
+        },
+        "volumeUnit": "Cubic Feet",
+        "delay_time": 10
+      },
+      {
+        "id": 2,
+        "sample_type": "Flush-Continuous Run",
+        "volume": {
+          "value": 40,
+          "unit": "L"
+        },
+        "volumeUnit": "Liters",
+        "delay_time": 15
+      },
+      {
+        "id": 3,
+        "sample_type": "Flush-Continuous Run",
+        "volume": {
+          "value": 45,
+          "unit": "CM"
+        },
+        "volumeUnit": "Cubic Meter",
+        "delay_time": 20
+      },
+      {
+        "id": 4,
+        "sample_type": "Flush-Continuous Run",
+        "volume": {
+          "value": 50,
+          "unit": "CF"
+        },
+        "volumeUnit": "Cubic Feet",
+        "delay_time": 25
+      }
+    ]
+  },
+  {
+    "name": "SAMPLE_INTERVAL_EVERY_MONTH",
+    "asset_id": "5158",
+    "sample_type": "Sample-Interval",
+    "input": {
+      "type": "object",
+      "required": ["volume"],
+      "properties": {
+        "volume": {
+          "oneOf": [
+            {
+              "type": "object",
+              "required": ["value", "unit"],
+              "properties": {
+                "unit": {
+                  "type": "string",
+                  "const": "CF",
+                  "default": "",
+                  "x_nice_name": "Cubic Feet"
+                },
+                "value": {
+                  "type": "number",
+                  "maximum": 200,
+                  "minimum": 0.1,
+                  "multipleOf": 0.1
+                }
+              }
+            },
+            {
+              "type": "object",
+              "required": ["value", "unit"],
+              "properties": {
+                "unit": {
+                  "type": "string",
+                  "const": "L",
+                  "default": "",
+                  "x_nice_name": "Liters"
+                },
+                "value": {
+                  "type": "integer",
+                  "maximum": 9999,
+                  "minimum": 5
+                }
+              }
+            },
+            {
+              "type": "object",
+              "required": ["value", "unit"],
+              "properties": {
+                "unit": {
+                  "type": "string",
+                  "const": "CM",
+                  "default": "",
+                  "x_nice_name": "Cubic Meter"
+                },
+                "value": {
+                  "type": "number",
+                  "maximum": 10000,
+                  "minimum": 0.01,
+                  "multipleOf": 0.1
+                }
+              }
+            }
+          ]
+        },
+        "delay_time": {
+          "type": "integer",
+          "label": "Delay",
+          "x_unit": "Seconds",
+          "default": 5,
+          "maximum": 360,
+          "minimum": 0,
+          "x_nice_name": "Delay Time",
+          "x_unit_short": "Sec"
+        }
+      }
+    },
+    "sample_interval_info": {
+      "type": "object",
+      "required": ["duration", "interval", "delay_period"],
+      "properties": {
+        "duration": {
+          "type": "object",
+          "required": ["value", "unit"],
+          "properties": {
+            "value": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 365,
+              "x_nice_name": "Sample Duration"
+            },
+            "unit": {
+              "type": "string",
+              "enum": ["days", "hours"],
+              "default": "days",
+              "x_nice_name": "Duration Unit"
+            }
+          }
+        },
+        "interval": {
+          "type": "object",
+          "required": ["value", "unit"],
+          "properties": {
+            "value": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 1440,
+              "x_nice_name": "Sampling Interval"
+            },
+            "unit": {
+              "type": "string",
+              "enum": ["minutes", "hours"],
+              "default": "minutes",
+              "x_nice_name": "Interval Unit"
+            }
+          }
+        },
+        "delay_period": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 360,
+          "default": 5,
+          "x_nice_name": "Initial Delay (Before First Sample)",
+          "x_unit": "Seconds",
+          "x_unit_short": "Sec"
+        }
+      }
+    }
+  }
+]

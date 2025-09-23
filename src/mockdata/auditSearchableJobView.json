@@ -1,0 +1,58 @@
+{
+    "jobID": "123456789",
+    "taskSequence": ["task1", "task2", "task3"],
+    "tasks": [
+      {
+        "taskID": "task1",
+        "taskName": "renderSearch",
+        "visible": true,
+        "search": {
+          "dropdownOptions": [
+            { "label": "ID", "value": "id" },
+            { "label": "Instrument ID", "value": "device_id" },
+            { "label": "Instrument Name", "value": "device_name" },
+            { "label": "Event", "value": "event_type" },
+            { "label": "Operator", "value": "audit_events_operator" },
+            { "label": "Action ID", "value": "device_action_id" },
+            { "label": "Continuous Run ID", "value": "continuous_run_id" },
+            { "label": "Timestamp", "value": "operation_timestamp" },
+            { "label": "Comments", "value": "comments" }
+          ]
+        }
+      },
+      {
+        "taskID": "task2",
+        "taskName": "renderTable",
+        "visible": true,
+        "table": {
+          "columns": [
+            { "title": "ID", "dataIndex": "id" },
+            { "title": "Instrument ID", "dataIndex": "device_id" },
+            { "title": "Instrument Name", "dataIndex": "device_name" },
+            { "title": "Event", "dataIndex": "event_type" },
+            { "title": "Operator", "dataIndex": "audit_events_operator" },
+            { "title": "Action ID", "dataIndex": "device_action_id" },
+            { "title": "Continuous Run ID", "dataIndex": "continuous_run_id" },
+            { "title": "Timestamp", "dataIndex": "operation_timestamp" },
+            { "title": "Comments", "dataIndex": "comments" }
+          ],
+          "api": {
+            "url": "/audit-event",
+            "authToken": "YOUR_AUTH_TOKEN",
+            "clientId": "phziot"
+          },
+          "defaultOrderBy": "audit_events.id",
+          "defaultLimit": 3,
+          "defaultStrict": "no"
+        }
+      },
+      {
+        "taskID": "task3",
+        "taskName": "renderPagination",
+        "visible": true,
+        "pagination": {
+          "totalCount": 0
+        }
+      }
+    ]
+}

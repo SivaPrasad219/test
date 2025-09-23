@@ -1,0 +1,22 @@
+import { createApp } from "vue";
+import App from "./App.vue";
+import router from "./router";
+import store from "./store";
+import i18n from "./i18n";
+import axiosPlugin from "./boot/axios";
+import Antd from "ant-design-vue";
+import "ant-design-vue/dist/reset.css";
+import "antd-css-utilities/utility.min.css";
+import "@/assets/css/global.css";
+import errorHandler from "./services/errorHandler";
+import errorMessagePlugin from "./plugins/errorMessagePlugin";
+
+const app = createApp(App);
+app.use(store);
+app.use(i18n);
+app.use(router);
+app.use(Antd);
+app.use(axiosPlugin);
+app.use(errorHandler);
+app.use(errorMessagePlugin);
+app.mount("#app");

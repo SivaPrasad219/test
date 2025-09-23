@@ -1,0 +1,67 @@
+{
+  "id": 3,
+  "name": "Admin Workflow",
+  "jobs": [
+    {
+      "id": 1,
+      "name": "Create Menu",
+      "tasks": [
+        {
+          "id": 1,
+          "name": "Render Menu",
+          "type": "renderMenu",
+          "items": [
+            { "name": "Home", "url": "/devicetype" },
+            { "name": "Instrument", "url": "/apc/instrument" },
+            { "name": "Data", "url": "/apc/data" },
+            { "name": "Monitoring", "url": "/monitoring" },
+            { "name": "MFG", "url": "/apc/mfg-monitoring" },
+            { "name": "Audit", "url": "/apc/audit" },
+            { "name": "Manage", "url": "/manage" },
+            { "name": "Notification", "url": "/notification" }
+          ]
+        },
+
+        {
+          "id": 2,
+          "name": "Render Logo",
+          "type": "renderLogo",
+          "details": {
+            "imagePath": "phizzle-logo.png",
+            "altText": "Company Logo",
+            "link": "/home"
+          }
+        },
+        {
+          "id": 3,
+          "name": "Render Avatar",
+          "type": "renderAvatar",
+          "details": {
+            "imagePath": "generic-avatar.png",
+            "altText": "User Avatar",
+            "link": "/home"
+          }
+        },
+        {
+          "id": 4,
+          "name": "Logout",
+          "type": "action",
+          "details": {
+            "text": "Logout",
+            "actionType": "logout",
+            "targetUrl": "/login"
+          }
+        },
+        {
+          "id": 5,
+          "name": "Render Footer",
+          "type": "renderFooter",
+          "details": {
+            "versionText": "Version v2.5",
+            "copyrightText": "© 2025 Phizzle, Inc."
+          }
+        }
+      ]
+    }
+  ]
+}

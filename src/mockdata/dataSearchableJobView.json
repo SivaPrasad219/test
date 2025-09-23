@@ -1,0 +1,113 @@
+{
+  "jobID": "123456789",
+  "taskSequence": ["task1", "task2", "task3"],
+  "tasks": [
+    {
+      "taskID": "task1",
+      "taskName": "renderSearch",
+      "visible": true,
+      "search": {
+        "dropdownOptions": [
+          {
+            "label": "Sample Status",
+            "value": "action_processing_status"
+          },
+          {
+            "label": "Instrument Name",
+            "value": "device_name"
+          },
+          {
+            "label": "Sample ID",
+            "value": "sample_id"
+          },
+          {
+            "label": "Measure Start Time",
+            "value": "measure_start_time_device"
+          },
+          {
+            "title": "Source",
+            "value": "source"
+          },
+          {
+            "label": "Measure End Time",
+            "value": "measure_end_time_device"
+          }
+        ]
+      }
+    },
+    {
+      "taskID": "task2",
+      "taskName": "renderTable",
+      "visible": true,
+      "table": {
+        "columns": [
+          {
+            "title": "Sample Status",
+            "dataIndex": "action_processing_status",
+            "customColumnCell": {
+              "styling": {
+                "classes": ["bg-white", "custom-class"],
+                "conditionalClassesBasedOValues": {
+                  "VIEWED": "viewed",
+                  "COMPLETED": "completed",
+                  "READY": "ready",
+                  "ABORTED": "aborted"
+                }
+              },
+              "events": [
+                {
+                  "name": "click",
+                  "handler": "openPop"
+                }
+              ]
+            }
+          },
+          {
+            "title": "Instrument Name",
+            "dataIndex": "device_name"
+          },
+          {
+            "title": "Sample Type",
+            "dataIndex": ""
+          },
+          {
+            "title": "Sample ID",
+            "dataIndex": "sample_id"
+          },
+          {
+            "title": "Measure Start Time",
+            "dataIndex": "measure_start_time_device"
+          },
+          {
+            "title": "Source",
+            "dataIndex": "source"
+          },
+          {
+            "title": "Measure End Time",
+            "dataIndex": "measure_end_time_device"
+          },
+          {
+            "title": "Exception",
+            "dataIndex": ""
+          }
+        ],
+        "api": {
+          "url": "/deviceaction/all/get-device-action-records",
+          "authToken": "YOUR_AUTH_TOKEN",
+          "clientId": "merck"
+        },
+        "defaultOrderBy": "audit_events.id",
+        "defaultLimit": 3,
+        "defaultStrict": "no"
+      }
+    },
+    {
+      "taskID": "task3",
+      "taskName": "renderPagination",
+      "visible": true,
+      "pagination": {
+        "totalCount": 0
+      }
+    }
+  ]
+}

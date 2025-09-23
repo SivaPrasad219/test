@@ -1,0 +1,291 @@
+{
+  "id": 1,
+  "name": "Instrument Page",
+  "jobs": [
+    {
+      "id": 1,
+      "name": "Render Home Page",
+      "tasks": [
+        {
+          "id": 1,
+          "name": "Render Instrument Image",
+          "title": "Statistics",
+          "type": "renderDeviceImage",
+          "details": {
+            "imagePath": "CLIMET.jpeg",
+            "altText": "Company Logo",
+            "link": "/home"
+          }
+        },
+        {
+          "id": 1,
+          "name": "Render Sample Statistics",
+          "type": "renderSampleStatistics",
+          "title": "Instrument Details",
+          "columns": [
+            {
+              "title": "Most Recent Sample",
+              "dataIndex": "id",
+              "isVisible": true
+            },
+            {
+              "title": "Samples This Week",
+              "dataIndex": "last_7_days_count",
+              "isVisible": true
+            },
+            {
+              "title": "Samples This Month",
+              "dataIndex": "last_1_month_count",
+              "isVisible": true
+            },
+            {
+              "title": "All Samples Taken",
+              "dataIndex": "total_count",
+              "isVisible": true
+            },
+            {
+              "title": "Operator",
+              "dataIndex": "operator",
+              "isVisible": false
+            },
+            {
+              "title": "Action ID",
+              "dataIndex": "deviceActionId",
+              "isVisible": false
+            },
+            {
+              "title": "Continuous Run ID",
+              "dataIndex": "continuousRunId",
+              "isVisible": false
+            },
+            {
+              "title": "Timestamp",
+              "dataIndex": "timestamp",
+              "isVisible": false
+            },
+            {
+              "title": "Comments",
+              "dataIndex": "comments",
+              "isVisible": false
+            }
+          ],
+          "api": {
+            "url": "/pm/task-result/samples/statistics",
+            "authToken": "YOUR_AUTH_TOKEN",
+            "clientId": "phziot"
+          }
+        },
+        {
+          "id": 2,
+          "name": "Render Instrument Statistics",
+          "type": "renderDeviceStatistics",
+          "title": "All Instruments",
+          "columns": [
+            {
+              "title": "Total Instruments",
+              "dataIndex": "total",
+              "isVisible": true
+            },
+            {
+              "title": "Ready for Use",
+              "dataIndex": "ready",
+              "isVisible": true
+            },
+            {
+              "title": "In-Use",
+              "dataIndex": "inuse",
+              "isVisible": true
+            },
+            {
+              "title": "Disconnected",
+              "dataIndex": "disconnected",
+              "isVisible": true
+            },
+            {
+              "title": "Operator",
+              "dataIndex": "operator",
+              "isVisible": false
+            },
+            {
+              "title": "Action ID",
+              "dataIndex": "deviceActionId",
+              "isVisible": false
+            },
+            {
+              "title": "Continuous Run ID",
+              "dataIndex": "continuousRunId",
+              "isVisible": false
+            },
+            {
+              "title": "Timestamp",
+              "dataIndex": "timestamp",
+              "isVisible": false
+            },
+            {
+              "title": "Comments",
+              "dataIndex": "comments",
+              "isVisible": false
+            }
+          ],
+          "api": {
+            "url": "/pm/asset/asset_statistics?asset_type_id=2",
+            "authToken": "YOUR_AUTH_TOKEN",
+            "clientId": "phziot"
+          }
+        },
+        {
+          "id": 3,
+          "name": "Render Resources",
+          "title": "Resources",
+          "type": "renderResources",
+          "columns": [
+            {
+              "title": "Support Portal",
+              "dataIndex": "id",
+              "isVisible": true
+            },
+            {
+              "title": "Documentation",
+              "dataIndex": "deviceId",
+              "isVisible": true
+            },
+            {
+              "title": "Tutorials",
+              "dataIndex": "deviceName",
+              "isVisible": true
+            },
+            {
+              "title": "Release Notes",
+              "dataIndex": "event",
+              "isVisible": true
+            },
+            {
+              "title": "Operator",
+              "dataIndex": "operator",
+              "isVisible": false
+            },
+            {
+              "title": "Action ID",
+              "dataIndex": "deviceActionId",
+              "isVisible": false
+            },
+            {
+              "title": "Continuous Run ID",
+              "dataIndex": "continuousRunId",
+              "isVisible": false
+            },
+            {
+              "title": "Timestamp",
+              "dataIndex": "timestamp",
+              "isVisible": false
+            },
+            {
+              "title": "Comments",
+              "dataIndex": "comments",
+              "isVisible": false
+            }
+          ],
+          "api": {
+            "url": "/pm/asset/asset_statistics?asset_type_id=2",
+            "authToken": "YOUR_AUTH_TOKEN",
+            "clientId": "phziot"
+          }
+        },
+        {
+          "id": 4,
+          "name": "Instrument Search",
+          "type": "renderSearch",
+          "isVisible": true,
+          "search": {
+            "dropdownOptions": [
+              {
+                "label": "Instrument Name",
+                "value": "name",
+                "isVisble": true
+              },
+              {
+                "label": "Site Name",
+                "value": "site_name",
+                "isVisble": true
+              },
+              {
+                "label": "Serial #",
+                "value": "asset_id",
+                "isVisble": true
+              }
+            ]
+          }
+        },
+        {
+          "id": 5,
+          "name": "Instrument Table",
+          "title": "Instruments",
+          "type": "renderTable",
+          "isVisible": true,
+          "table": {
+            "columns": [
+              {
+                "title": "Status",
+                "dataIndex": "connection_status",
+                "isVisible": true,
+                "page": "instrument"
+              },
+              {
+                "title": "Instrument Name",
+                "dataIndex": "name",
+                "isVisible": true,
+                "page": "instrument"
+              },
+              {
+                "title": "Site Name",
+                "dataIndex": "site_name",
+                "isVisible": true,
+                "page": "instrument"
+              },
+              {
+                "title": "Serial #",
+                "dataIndex": "asset_id",
+                "isVisible": true,
+                "page": "instrument"
+              },
+              {
+                "title": "Last Heartbeat",
+                "dataIndex": "create_timestamp",
+                "isVisible": true,
+                "page": "instrument"
+              },
+              {
+                "title": "Action",
+                "renderAction": "switch",
+                "isVisible": true
+              },
+              {
+                "title": "Edit",
+                "renderIcon": "edit",
+                "isVisible": true
+              }
+            ],
+            "isCheckboxVisible": false,
+            "api": {
+              "url": "/pm/asset",
+              "authToken": "YOUR_AUTH_TOKEN",
+              "clientId": "phziot"
+            },
+            "defaultOrderBy": "asset__audit_event__operation_timestamp",
+            "defaultLimit": 10,
+            "defaultStrict": "no"
+          }
+        },
+        {
+          "id": 5,
+          "name": "Instrument Pagination",
+          "type": "renderPagination",
+          "isVisible": true,
+          "pagination": {
+            "totalCount": 0
+          }
+        }
+      ]
+    }
+  ]
+}

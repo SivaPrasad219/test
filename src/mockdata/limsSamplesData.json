@@ -1,0 +1,58 @@
+{
+  "jobID": "123456789",
+  "taskSequence": ["task1", "task2", "task3"],
+  "tasks": [
+    {
+      "taskID": "task1",
+      "taskName": "renderSearch",
+      "visible": true,
+      "search": {
+        "dropdownOptions": [
+          {
+            "label": "LIMS Status",
+            "value": "lims_status"
+          },
+          {
+            "label": "Instrument Name",
+            "value": "task_result_meta.asset_info.name"
+          },
+          
+          { "label": "Sample Type", "value": "sample_type_label" },
+          { "label": "LIMS ID", "value": "lims_id" },
+          { "label": "LIMS", "value": "source" },
+          { "label": "Created By", "value": "meta.author" }
+        ]
+      }
+    },
+    {
+      "taskID": "task2",
+      "taskName": "renderTable",
+      "visible": true,
+      "table": {
+        "columns": [
+          { "title": "Sample ID", "dataIndex": "lims_id" },
+          { "title": "Sample Type", "dataIndex": "sample_type_label" },
+          {
+            "title": "Instrument Name",
+            "dataIndex": "task_result_meta.asset_info.name"
+          },
+          { "title": "Status", "dataIndex": "meta.status.source" },
+          { "title": "Operator", "dataIndex": "meta.author" },
+          { "title": "Sample Created", "dataIndex": "created" },
+          { "title": "UID", "dataIndex": "meta.analysis_request_id" }
+        ],
+        "api": {
+          "url": "pm/lims-sample?orderBy=id"
+        }
+      }
+    },
+    {
+      "taskID": "task3",
+      "taskName": "renderPagination",
+      "visible": true,
+      "pagination": {
+        "totalCount": 0
+      }
+    }
+  ]
+}

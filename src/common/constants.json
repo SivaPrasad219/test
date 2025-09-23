@@ -1,0 +1,559 @@
+{
+  "instrument": {
+    "statistics": {
+      "Total Instruments": "Represents the total instrument count",
+      "Ready For Use": "Represents the instrument count that is available for sampling",
+      "In-Use": "Represents the number of instruments that are currently being used by the Operator(s)",
+      "Disconnected": "Represents the number of instruments that are not available for sampling",
+      "Most Recent Sample": "Indicates the most recent data or measurement that was recorded or collected before the current time",
+      "Samples This Week": "Gives the sample count executed over the duration of the week",
+      "Samples This Month": "Gives the sample count of samples performed over the month",
+      "All Samples Taken": "Sample count of all samples taken to date"
+    },
+    "resources": {
+      "head": "Resource panel provides support and guidance related to the Digital Air Series",
+      "data": [
+        {
+          "name": "Support Portal",
+          "value": "The support portal is a platform where users get assistance and find solutions to questions and/or issues. The support portal offers communication via a ticketing system to ensure prompt and efficient support"
+        },
+        {
+          "name": "Documentation",
+          "value": "The documentation link provides additional content about the Digital Air Series such as feature/functionality documentation, user guides, and technical resources"
+        },
+        {
+          "name": "Tutorials",
+          "value": "Tutorials are available to guide users through specific tasks or processes, offering step-by-step instructions or demonstrations"
+        },
+        {
+          "name": "Release Notes",
+          "value": "The Release Notes identify the features/functionality changes for each version of Digital Air Series"
+        }
+      ]
+    },
+
+    "Status": {
+      "head": "The Status column displays the instrument status",
+      "data": [
+        {
+          "name": "Ready for Use",
+          "value": "The instrument is onboarded and available to take a measurement"
+        },
+        {
+          "name": "Disconnected",
+          "value": "The instrument is currently not connected or accessible"
+        },
+        {
+          "name": "Not Ready for Use",
+          "value": "The instrument is currently accessible. This may be due to the device site not being assigned or the device time being out of sync."
+        },
+        {
+          "name": "In-Use",
+          "value": "The instrument is currently in use."
+        },
+        {
+          "name": "Inactivated",
+          "value": "The administrator can Inactivate an instrument in the Action column. Inactivating an instrument prevents unintended usage or access when the device is in a connected state."
+        },
+        {
+          "name": "In Use",
+          "value": "The instrument has been used by the user"
+        }
+      ]
+    },
+
+    "Instrument Name": "The instrument name given during the onboarding process",
+    "Site Name": "The Site where the instrument will be taking samples/measurements",
+    "Serial #": "The serial number associated with the instrument",
+    "Admin Status": {
+      "head": "The instrument status that indicates if an instrument is available for sampling or not",
+      "data": [
+        {
+          "name": "Onboarded",
+          "value": "The instrument is onboarded on the Digital Air Series Platform"
+        }
+      ]
+    },
+    "Edit": "This action will edit the instrument details",
+    "Last Heartbeat": "Indicates the last time an instrument sent a signal or updated its status",
+    "Action": {
+      "head": "Active & Inactive Action Types That Are Supported:",
+      "data": [
+        {
+          "name": "Active",
+          "value": "To activate the instrument."
+        },
+        {
+          "name": "Inactive",
+          "value": "To make the instrument inactive."
+        }
+      ]
+    }
+  },
+  "measure": {
+    "Check": "To begin the sampling select the Check Box of the instrument that is in Ready for Use status",
+    "Instrument Name": "The instrument name given during the onboarding process",
+    "Status": {
+      "head": "The Status column displays the instrument status",
+      "data": [
+        {
+          "name": "Ready for Use",
+          "value": "The instrument is onboarded and available to take a measurement"
+        },
+        {
+          "name": "Disconnected",
+          "value": "The instrument is currently not connected or accessible"
+        },
+        {
+          "name": "In Use",
+          "value": "The instrument has been used by the user"
+        }
+      ]
+    },
+    "Data": {
+      "head": "The Data column displays the icons",
+      "data": [
+        {
+          "name": "Page Icon",
+          "value": "The page icon represents the information of the recent taken sample on the instrument"
+        },
+        {
+          "name": "Sample Icon",
+          "value": "The arrow pointing in the box icon represents an in-progress sample on an instrument"
+        },
+        {
+          "name": "Flush Icon",
+          "value": "The brush cleaning icon represents an in-progress flush on an instrument"
+        }
+      ]
+    },
+    "Serial #": "The serial number associated with the instrument",
+    "Last Heartbeat": "Indicates the last time an instrument sent a signal or updated its status",
+    "Exception": {
+      "head": "Abort & Force Drop exception types that are supported",
+      "data": [
+        {
+          "name": "Abort",
+          "value": "To stop the sample/Flush"
+        },
+        {
+          "name": "Force Drop",
+          "value": "To stop the sample/Flush in case the instrument gets disconnected or powered off"
+        }
+      ]
+    },
+
+    "Model": "Instrument model name"
+  },
+
+  "data": {
+    "Sample Status": {
+      "head": "The Status column indicates the current sample state",
+      "data": [
+        {
+          "name": "In-Progress",
+          "value": "A measurement has started and set the status on the instrument"
+        },
+        {
+          "name": "Synced",
+          "value": "Synced Sample Status should be included."
+        },
+        {
+          "name": "Completed",
+          "value": "The sample status shown when the sample finishes without any interruptions and the operator reviews the result and confirms the sample with E-Signature"
+        },
+        {
+          "name": "Reviewed",
+          "value": "The sample status shown when the operator reviews the result after the sample is completed"
+        },
+        {
+          "name": "Aborted",
+          "value": "The sample status shown when an operator terminates running a sample"
+        },
+        {
+          "name": "Force Drop",
+          "value": "The sample status shown when the operator is running the sample and the instrument disconnects"
+        },
+        {
+          "name": "In-Progress Disconnected",
+          "value": "The sample status shown, when the operator is running the sample, the instrument disconnects and does not Force Drop the sample"
+        },
+        {
+          "name": "External Sample",
+          "value": "The sample status shown when the sample is collected after the instrument is reconnected to the Digital Air Series Platform"
+        },
+        {
+          "name": "External Interrupt",
+          "value": "The sample status shown when the instrument is powered off or the ethernet cable has disconnected while the operator is running the sample"
+        },
+        {
+          "name": "Suspended",
+          "value": "The sample status shown when the operator is running the sample and the instrument disconnects"
+        }
+      ]
+    },
+    "Instrument Name": "The Instrument Name column displays the instrument name and allows users to search for instruments by their assigned names or identifiers",
+    "Sample Type": {
+      "head": "The Sample Type column indicates the type of sample that is being executed",
+      "data": [
+        {
+          "name": "Sample - Single",
+          "value": "The operator started a Sample - Single on the instrument"
+        },
+        {
+          "name": "Flush - Single",
+          "value": "The operator started flushing the collected particles of the Sample - Single run on the instrument"
+        },
+        {
+          "name": "Sample - Continuous Run",
+          "value": "The operator started a multiple samples on the instrument"
+        },
+        {
+          "name": "Flush - Continuous Run",
+          "value": "The operator started flushing the collected particles for the multiple, collected samples"
+        }
+      ]
+    },
+    "Sample ID": "This column displays the ID of the samples",
+    "Continuous Run ID": "This column displays the ID of the Continuous Run",
+    "Measure Start Time": "The measure start time field provides the time when the operator started the sample on the instrument",
+    "Measure End Time": "The date/time when the sample collection was completed",
+    "Source": {
+      "head": "The Source column indicates the source of sample that is being executed",
+      "data": [
+        {
+          "name": "IN-HOUSE",
+          "value": "samples that are produced through application"
+        },
+        {
+          "name": "LIMS",
+          "value": "samples that are produced through LIMS"
+        }
+      ]
+    },
+    "Exception": {
+      "head": "Abort & Force Drop exception types that are supported",
+      "data": [
+        {
+          "name": "Abort",
+          "value": "To stop the sample/Flush"
+        },
+        {
+          "name": "Force Drop",
+          "value": "To stop the sample/Flush in case the instrument gets disconnected or powered off"
+        }
+      ]
+    }
+  },
+  "audit": {
+    "Event": {
+      "head": "Event is the record created when an action is performed in the DAS platform",
+      "data": [
+        {
+          "name": "Logged In",
+          "value": "When the user logged IN into the application",
+          "type": "N/A"
+        },
+        {
+          "name": "Logged Out",
+          "value": "When the user logged OUT of the application",
+          "type": "N/A"
+        },
+        {
+          "name": "Instrument Disconnected",
+          "value": "When instrument connectivity is lost",
+          "type": "N/A"
+        },
+        {
+          "name": "Instrument Connected",
+          "value": "When instrument connectivity is reestablished after a disconnect event",
+          "type": "N/A"
+        },
+        {
+          "name": "Instrument Onboarded",
+          "value": "When an instrument is onboarded from the UI",
+          "type": "N/A"
+        },
+        {
+          "name": "Instrument Inactivated",
+          "value": "When an instrument is Inactivated from the UI",
+          "type": "N/A"
+        },
+        {
+          "name": "Instrument Details Updated",
+          "value": "When an instrument details are updated",
+          "type": "N/A"
+        },
+        {
+          "name": "Sample-Single Started",
+          "value": "When a sample action command is dispatched to the instrument",
+          "type": "Sample - Single"
+        },
+        {
+          "name": "Sample-Single Finished",
+          "value": "When sampling is finished by the instrument and the data collected is stored in the database (DB)",
+          "type": "Sample - Single, Sample - Continuous Run"
+        },
+        {
+          "name": "Sample Aborted",
+          "value": "When sampling is aborted by the instrument and the data collected is stored in the DB",
+          "type": "Sample - Single, Sample - Continuous Run"
+        },
+        {
+          "name": "Abort Initiated",
+          "value": "While running the sample if user initiates the abort button",
+          "type": "Sample - Single, Sample - Continuous Run"
+        },
+        {
+          "name": "Abort Request Failed",
+          "value": "when the abort request failed",
+          "type": "Sample - Single, Sample - Continuous Run"
+        },
+        {
+          "name": "Sample-Continuous Run Started",
+          "value": "When continuous run sample action command is dispatched to the instrument",
+          "type": "Sample - Continuous Run"
+        },
+        {
+          "name": "Sample-Continuous Run Finished",
+          "value": "When continuous run sampling is finished by the instrument and the data collected is stored in the DB",
+          "type": "Sample - Continuous Run"
+        },
+        {
+          "name": "Flush-Single Started",
+          "value": "When flush action command is dispatched to the instrument",
+          "type": "Flush - Single"
+        },
+        {
+          "name": "Flush-Single Finished",
+          "value": "When flush is finished by the instrument and the data collected is stored in the DB",
+          "type": "Flush - Single, Flush - Continuous Run"
+        },
+        {
+          "name": "Flush-Continuous Run Started",
+          "value": "When continuous run flush action command is dispatched to the instrument",
+          "type": "Flush - Continuous Run"
+        },
+        {
+          "name": "Flush-Continuous Run Finished",
+          "value": "When continuous run flush is finished by the instrument and the data",
+          "type": "Flush - Continuous Run"
+        },
+        {
+          "name": "Test Result Viewed",
+          "value": "When the data page of finished sample is viewed, then the audit event is created",
+          "type": "N/A"
+        },
+        {
+          "name": "Flush Aborted",
+          "value": "When a flush sample is aborted by the instrument and the data collected is stored in the DB",
+          "type": "Flush - Single, Flush - Continuous Run"
+        },
+        {
+          "name": "Forcedrop Executed",
+          "value": "When Force drop action command is dispatched to drop the data collection of the previous action",
+          "type": "Sample - Single, Sample - Continuous Run, Flush - Single, Flush - Continuous Run"
+        },
+        {
+          "name": "Forcedrop Initiated",
+          "value": "While running the sample if there is a network or power disruption then user initiates the forcedrop button",
+          "type": "Sample - Single, Sample - Continuous Run, Flush - Single, Flush - Continuous Run"
+        },
+        {
+          "name": "Forcedrop Request Failed",
+          "value": "When the forcedrop request failed",
+          "type": "Sample - Single, Sample - Continuous Run, Flush - Single, Flush - Continuous Run"
+        },
+        {
+          "name": "external_interrupt",
+          "value": "When a disconnect happens during an action and the action is not completed by the instrument",
+          "type": "Sample - Single, Sample - Continuous Run, Flush - Single, Flush - Continuous Run"
+        },
+        {
+          "name": "external_sample",
+          "value": "When external samples are detected after the instrument reconnects and the data for those external samples are processed and stored in the DB",
+          "type": "N/A"
+        },
+        {
+          "name": "E-Sign Verification Done",
+          "value": "When the User has been successfully verified",
+          "type": "N/A"
+        },
+        {
+          "name": "E-Sign Verification Failed",
+          "value": "When the User verification failed",
+          "type": "N/A"
+        }
+      ]
+    },
+    "Instrument Name": "The instrument name on which the audit event action was executed",
+    "User": "The user that executed the audit event",
+    "Sample ID": "Sample ID specifies the unique ID created for each sample",
+    "Continuous Run ID": "Unique sample IDs associated with continuous run samples",
+    "Timestamp": "Timestamp shows the date/time when the audit event was performed",
+    "Event Details": "EventDetails shows the Comments/details when the audit event was performed",
+    "Source": {
+      "head": "The Source column indicates the source of sample that is being executed",
+      "data": [
+        {
+          "name": "IN-HOUSE",
+          "value": "samples that are produced through application"
+        },
+        {
+          "name": "LIMS",
+          "value": "samples that are produced through LIMS"
+        }
+      ]
+    }
+  },
+  "lims": {
+    "Sample Status": {
+      "head": "The Status column indicates the current sample state",
+      "data": [
+        {
+          "name": "New",
+          "value": "When the sample added from lims"
+        },
+        {
+          "name": "In-Progress",
+          "value": "A measurement has started and set the status on the instrument"
+        },
+        {
+          "name": "Completed",
+          "value": "The sample status shown when the sample finishes without any interruptions and the operator reviews the result and confirms the sample with E-Signature"
+        },
+        {
+          "name": "Reviewed",
+          "value": "The sample status shown when the operator reviews the result after the sample is completed"
+        },
+        {
+          "name": "Abort",
+          "value": "The sample status shown when an operator terminates running a sample"
+        },
+        {
+          "name": "Force Drop",
+          "value": "The sample status shown when the operator is running the sample and the instrument disconnects"
+        },
+        {
+          "name": "In-Progress Disconnected",
+          "value": "The sample status shown, when the operator is running the sample, the instrument disconnects and does not Force Drop the sample"
+        },
+        {
+          "name": "External Sample",
+          "value": "The sample status shown when the sample is collected after the instrument is reconnected to the Digital Air Series Platform"
+        },
+        {
+          "name": "External Interrupt",
+          "value": "The sample status shown when the instrument is powered off or the ethernet cable has disconnected while the operator is running the sample"
+        }
+      ]
+    },
+    "Sample Type": {
+      "head": "The Sample Type column indicates the type of sample that is being executed",
+      "data": [
+        {
+          "name": "Sample - Single",
+          "value": "The operator started a Sample - Single on the instrument"
+        },
+        {
+          "name": "Flush - Single",
+          "value": "The operator started flushing the collected particles of the Sample - Single run on the instrument"
+        },
+        {
+          "name": "Sample - Continuous Run",
+          "value": "The operator started a multiple samples on the instrument"
+        },
+        {
+          "name": "Flush - Continuous Run",
+          "value": "The operator started flushing the collected particles for the multiple, collected samples"
+        },
+        {
+          "name": "Abort",
+          "value": "The operator terminated the current ongoing sample on the instrument"
+        },
+        {
+          "name": "Force Drop",
+          "value": "While the sampling is in progress, and the instrument got disconnected, then the operator will force drops the sample. The sample action is Force Drop"
+        },
+        {
+          "name": "External sample",
+          "value": "The sample collected after the instrument is reconnected to the Digital Air Series Platform then the sample status shows as External sample"
+        }
+      ]
+    },
+    "Lims Status": {
+      "head": "The current state result sample data of LIMS sample",
+      "data": [
+        {
+          "name": "Synced",
+          "value": "The sample data is updated to the LIMS system"
+        },
+        {
+          "name": "To-sync",
+          "value": "The sample data is not available or updated to LIMS system"
+        }
+      ]
+    },
+    "Instrument Name": "The Instrument Name column displays the instrument name and allows users to search for instruments by their assigned names or identifiers",
+    "LIMS ID": "This column displays the ID of the Lims",
+    "LIMS": "The Lims column indicates the source of sample that is being executed",
+    "Created By": "The user that created the Lims sample",
+    "Action": {
+      "head": "Start & to-sync types that are supported in this column",
+      "data": [
+        {
+          "name": "start",
+          "value": "To select the instrument and start sample"
+        },
+        {
+          "name": "to-sync",
+          "value": "To export the sample data"
+        }
+      ]
+    }
+  },
+
+  "manage": {
+    "users": {
+      "First Name": "Displays the user’s first name",
+      "Last Name": "Displays the user’s last name",
+      "User Name": "The User Name is assigned to the user by the Administrator",
+      "Org Name": "The name of the organization where the user is working",
+      "Email ID": "The email id of the user will be displayed",
+      "Site Name": "The site allocated to the user by admin will be displayed",
+      "Role": "The role allocated to the user by admin will be displayed",
+      "Status": "The admin can activate or deactivate the user",
+      "Edit": "The admin can make changes to the user role"
+    },
+    "sites": {
+      "Site Name": "Name of the site",
+      "Alias": "The alternative names of the site will be displayed",
+      "Description": "The site details can be added in this section",
+      "Timezone": "The site timezone will be displayed",
+      "Status": "The admin can activate or deactivate the site",
+      "Edit": "The admin can make changes to the site"
+    }
+  },
+
+  "mfg": {
+    "Active Alerts": {
+      "TYPE": "Display Type.",
+      "SAMPLE POINT": "Displays Sample point.",
+      "ASSET": "Shows Asset data.",
+      "SEVERITY": "Displays Severity.",
+      "MESSAGE": "Displays message.",
+      "ACTION": "Displays the action."
+    },
+    "Management Review": {
+      "TEXT ID": "Displays Text ID.",
+      "SAMPLE POINT": "Displays Sample point.",
+      "WORKLIST ID": "Displays Worklist ID.",
+      "LIMS SAMPLE #": "Displays Lims Sample data.",
+      "ASSET": "Shows Asset data.",
+      "STATUS": "Shows the status.",
+      "DATE & TIME": "Displays Timestamp.",
+      "0.5µM COUNT": "Displays 0.5µM COUNT",
+      "5.0µM COUNT": "Displays 5.0µM COUNT"
+    }
+  }
+}

@@ -1,0 +1,96 @@
+{
+  "table": {
+    "columns": [
+      {
+        "title": "Check",
+        "dataIndex": "check",
+        "isVisible": true,
+        "page": "measure",
+        "width": "150px"
+      },
+      {
+        "title": "Instrument Name",
+        "dataIndex": "name",
+        "isVisible": true,
+        "page": "measure",
+        "width": "150px"
+      },
+      {
+        "title": "Status",
+        "dataIndex": "connection_status",
+        "isVisible": true,
+        "page": "measure",
+        "width": "130px"
+      },
+      {
+        "title": "Data",
+        "dataIndex": "data",
+        "isVisible": true,
+        "page": "measure",
+        "width": "100px"
+      },
+      {
+        "title": "Model",
+        "dataIndex": "asset__asset_model___name",
+        "isVisible": true,
+        "page": "measure",
+        "width": "200px"
+      },
+      {
+        "title": "Serial #",
+        "dataIndex": "asset_id",
+        "isVisible": true,
+        "page": "measure",
+        "width": "250px"
+      },
+      {
+        "title": "Last Heartbeat",
+        "dataIndex": "create_timestamp",
+        "isVisible": true,
+        "page": "measure",
+        "width": "250px"
+      },
+      {
+        "title": "Exception",
+        "dataIndex": "exception",
+        "isVisible": true,
+        "page": "measure",
+        "width": "100px"
+      }
+    ],
+    "isCheckboxVisible": true,
+    "api": {
+      "url": "/pm/asset?status=Onboarded",
+      "authToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjMiLCJ1c2VybmFtZSI6Ik1FUkNLLUFETUlOIiwic3RhdHVzIjoiQUNUSVZFIiwiZmlyc3RuYW1lIjpudWxsLCJsYXN0bmFtZSI6bnVsbCwiZW1haWwiOm51bGwsInNpdGVfaWQiOjIsImN1c3RvbWVyX2NvZGUiOiJtZXJjayIsInJvbGVfaWQiOiIxIiwiY3JlYXRlZF9kYXRlIjoiMjAyNC0wMS0yOVQwNToyMDoxMS4xMzdaIiwidXBkYXRlZF9kYXRlIjoiMjAyNC0wMS0yOVQwNToyMDoxMS4xMzdaIiwiY3JlYXRlZF9ieSI6IlNZU1RFTSIsInVwZGF0ZWRfYnkiOiJTWVNURU0iLCJpc19kZWZhdWx0X3Bhc3N3b3JkIjpmYWxzZSwicm9sZSI6ImFkbWluaXN0cmF0b3IiLCJzaXRlIjoiU2l0ZSAxIiwidXNlcl9pZCI6IjMiLCJjdXN0b21lcl9pZCI6MSwiaWF0IjoxNzEwOTk5NDgyLCJleHAiOjE3MTEwMDMwODJ9.XyCBJnN4Xp4gepRO7hldR_DgvEGxhFcaIWY7iKIqgws",
+      "clientId": "phziot"
+    },
+    "defaultOrderBy": "asset__audit_event__operation_timestamp",
+    "defaultStrict": "no",
+    "defaultLimit": "10"
+  },
+
+  "dropdownOptions": [
+    { "label": "Instrument Name", "value": "name", "isVisble": true },
+    {
+      "label": "Model",
+      "value": "asset__asset_model___name",
+      "isVisble": true
+    },
+    {
+      "label": "Serial #",
+      "value": "asset_id",
+      "isVisble": true
+    }
+  ],
+
+  "measurePageHeader": [
+    { "field": "name", "header": "Instrument Name" },
+    { "field": "connection_status", "header": "Status" },
+    { "field": "asset__asset_model___name", "header": "Model" },
+    { "field": "asset_id", "header": "Serial #" }
+  ],
+
+  "pagination": {
+    "totalCount": 0
+  }
+}

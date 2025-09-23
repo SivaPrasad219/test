@@ -1,0 +1,115 @@
+{
+  "measurmentData": {
+    "sample_status": {
+      "title": "Sample Status",
+      "dataIndex": "Completed"
+    },
+    "sample_type": {
+      "title": "Sample Type",
+      "dataIndex": "Single sample"
+    },
+    "volume": {
+      "title": "Volume",
+      "dataIndex": "28.3 L"
+    },
+    "start_time": {
+      "title": "Start Time",
+      "dataIndex": "May 17, 2024, 4:17:57 AM (UTC)"
+    },
+    "end_time": {
+      "title": "End Time",
+      "dataIndex": "May 17, 2024, 4:18:19 AM (UTC)"
+    },
+    "location": {
+      "title": "Location",
+      "dataIndex": "Phizzle"
+    },
+    "period": {
+      "title": "Period",
+      "dataIndex": "10sec"
+    },
+    "operator": {
+      "title": "User",
+      "dataIndex": "naveen_op"
+    },
+    "sample_id": {
+      "title": "Sample ID",
+      "dataIndex": "41"
+    },
+    "cumulativedata": [
+      {
+        "0.500 µm": 11850
+      },
+      {
+        "0.700 µm": 5586
+      },
+      {
+        "1.000 µm": 3586
+      },
+      {
+        "3.000 µm": 371
+      },
+      {
+        "5.000 µm": 73
+      },
+      {
+        "10.000 µm": 11
+      }
+    ],
+    "differentialdata": [
+      {
+        "0.500 µm": 6264
+      },
+      {
+        "0.700 µm": 2000
+      },
+      {
+        "1.000 µm": 3215
+      },
+      {
+        "3.000 µm": 298
+      },
+      {
+        "5.000 µm": 62
+      },
+      {
+        "10.000 µm": 11
+      }
+    ]
+  },
+  "instrumentData": {
+    "device": {
+      "title": "Instrument Name",
+      "dataIndex": "Climet"
+    },
+
+    "flowrate": {
+      "title": "Flow Rate",
+      "dataIndex": "100.0 LPM"
+    },
+    "devicetype": {
+      "title": "Instrument Type",
+      "dataIndex": "Particlecounter"
+    },
+    "laserstatus": {
+      "title": "Laser Status",
+      "dataIndex": "good"
+    },
+    "productname": {
+      "title": "Product Name",
+      "dataIndex": "9500-01"
+    },
+    "serialnumber": {
+      "title": "Serial Number",
+      "dataIndex": "95001410001"
+    },
+    "calibrationdate": {
+      "title": "Calibration Date",
+      "dataIndex": "2019-11-19"
+    },
+    "firmwareversion": {
+      "title": "Firmware Version",
+      "dataIndex": "4.0"
+    }
+  }
+}

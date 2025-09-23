@@ -1,0 +1,56 @@
+{
+  "columns": [
+    { "title": "Event", "dataIndex": "event_type", "key": "event_type" },
+    {
+      "title": "Instrument Name",
+      "dataIndex": "asset_name",
+      "key": "asset_name"
+    },
+    { "title": "User", "dataIndex": "operator", "key": "operator" },
+    {
+      "title": "Sample ID",
+      "dataIndex": "task_result_id",
+      "key": "task_result_id"
+    },
+
+    {
+      "title": "Continuous Run ID",
+      "dataIndex": "meta.cr_id",
+      "key": "meta.cr_id"
+    },
+    { "title": "Source", "dataIndex": "source", "key": "source" },
+    {
+      "title": "Timestamp",
+      "dataIndex": "operation_timestamp",
+      "key": "operation_timestamp"
+    },
+    { "title": "Event Details", "dataIndex": "comments", "key": "comments" }
+  ],
+  "dropdownOptions": [
+    { "label": "Event", "value": "event_type" },
+    { "label": "Instrument Name", "value": "asset_name" },
+    { "label": "User", "value": "operator" },
+    { "label": "Sample ID", "value": "task_result_id" },
+    { "label": "Continuous Run ID", "value": "meta.cr_id" },
+    { "label": "Source", "value": "source" },
+    { "label": "Timestamp", "value": "operation_timestamp" }
+  ],
+  "searchKeyMapping": {
+    "event_type": "Event",
+    "asset_name": "Instrument Name",
+    "operator": "User",
+    "task_result_id": "Sample ID",
+    "task_id": "Continuous Run ID",
+    "operation_timestamp": "Timestamp"
+  },
+  "auditsPageHeaders": [
+    { "field": "event_type", "header": "Event" },
+    { "field": "asset_name", "header": "Instrument Name" },
+    { "field": "operator", "header": "User" },
+    { "field": "task_result_id", "header": "Sample ID" },
+    { "field": "meta.cr_id", "header": "Continuous Run ID" },
+    { "field": "source", "header": "Source" },
+    { "field": "operation_timestamp", "header": "Timestamp" },
+    { "field": "comments", "header": "Event Details" }
+  ]
+}

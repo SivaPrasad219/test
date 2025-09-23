@@ -1,0 +1,116 @@
+{
+  "asset_id": "Climet Demo Unit-00:40:9d:97:5c:c2",
+  "task_defs": [
+    {
+      "sample_type_key": "continuous-sample",
+      "sample_type_label": "Continuous Sample",
+      "input": {
+        "type": "object",
+        "required": ["id", "limssampleid", "program", "location", "worklistid"],
+        "properties": {
+          "id": {
+            "type": "string",
+            "default": "Trident_1234",
+            "x_nice_name": "Text ID"
+          },
+          "program": {
+            "enum": ["Critical Ops QCA", "Grade A Critical Ops MFG"],
+            "type": "string",
+            "default": "Grade A Critical Ops MFG",
+            "x_nice_name": "Program"
+          },
+          "location": {
+            "enum": [],
+            "type": "string",
+            "default": "CR1 BSC-1",
+            "x_nice_name": "Location"
+          },
+          "worklistid": {
+            "type": "string",
+            "default": "12345",
+            "x_nice_name": "Worklist ID"
+          },
+          "limssampleid": {
+            "type": "string",
+            "default": "12345",
+            "x_nice_name": "LIMS Sample #"
+          }
+        }
+      }
+    },
+    {
+      "sample_type_key": "start-sample",
+      "sample_type_label": "Start Sample",
+      "input": {
+        "type": "object",
+        "required": ["id", "limssampleid", "program", "location", "worklistid"],
+        "properties": {
+          "id": {
+            "type": "string",
+            "default": "Trident_1234",
+            "x_nice_name": "Text ID"
+          },
+          "program": {
+            "enum": ["Critical Ops QCA", "Grade A Critical Ops MFG"],
+            "type": "string",
+            "default": "Grade A Critical Ops MFG",
+            "x_nice_name": "Program"
+          },
+          "location": {
+            "enum": [],
+            "type": "string",
+            "default": "CR1 BSC-1",
+            "x_nice_name": "Location"
+          },
+          "worklistid": {
+            "type": "string",
+            "default": "12345",
+            "x_nice_name": "Worklist ID"
+          },
+          "limssampleid": {
+            "type": "string",
+            "default": "12345",
+            "x_nice_name": "LIMS Sample #"
+          }
+        }
+      }
+    },
+    {
+      "sample_type_key": "start-flush",
+      "sample_type_label": "Start Flush",
+      "input": {
+        "type": "object",
+        "required": ["id", "limssampleid", "program", "location", "worklistid"],
+        "properties": {
+          "id": {
+            "type": "string",
+            "default": "Trident_1234",
+            "x_nice_name": "Text ID"
+          },
+          "program": {
+            "enum": ["Critical Ops QCA", "Grade A Critical Ops MFG"],
+            "type": "string",
+            "default": "Grade A Critical Ops MFG",
+            "x_nice_name": "Program"
+          },
+          "location": {
+            "enum": [],
+            "type": "string",
+            "default": "CR1 BSC-1",
+            "x_nice_name": "Location"
+          },
+          "worklistid": {
+            "type": "string",
+            "default": "12345",
+            "x_nice_name": "Worklist ID"
+          },
+          "limssampleid": {
+            "type": "string",
+            "default": "12345",
+            "x_nice_name": "LIMS Sample #"
+          }
+        }
+      }
+    }
+  ]
+}

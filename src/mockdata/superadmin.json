@@ -1,0 +1,51 @@
+{
+    "id": 4,
+    "name": "Super-Admin Workflow",
+        "tasks": [
+          {
+            "taskID": "task1",
+            "taskName": "renderSearch",
+            "visible": true,
+            "search": {
+              "dropdownOptions": [
+                { "label": "Name", "value": "name" },
+                { "label": "Client Key", "value": "key" },
+                { "label": "Onboarded Date", "value": "onboard_date" },
+                { "label": "DB Name", "value": "db_name" },
+                { "label": "Display Name", "value": "display_name" }
+              ]
+            }
+          },
+          {
+            "taskID": "task2",
+            "taskName": "renderTable",
+            "visible": true,
+            "table": {
+              "columns": [
+                { "title": "Name", "dataIndex": "name" },
+                { "title": "Client Key", "dataIndex": "key" },
+                { "title": "Onboarded Date", "dataIndex": "onboard_date" },
+                { "title": "DB Name", "dataIndex": "db_name" },
+                { "title": "Display Name", "dataIndex": "display_name" }
+              ],
+              "api": {
+                "url": "/pm/all-clients",
+                "authToken": "YOUR_AUTH_TOKEN",
+                "clientId": "phizzle"
+              },
+              "defaultOrderBy": "id",
+              "defaultLimit": 2,
+              "defaultStrict": "no"
+            }
+          },
+          {
+            "taskID": "task3",
+            "taskName": "renderPagination",
+            "visible": true,
+            "pagination": {
+              "totalCount": 0
+            }
+          }
+        ]
+  }
+  

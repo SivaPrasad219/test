@@ -1,0 +1,350 @@
+[
+  {
+    "ip": "192.168.0.120",
+    "deviceType": "apc",
+    "meta": {
+      "192.168.0.120": {
+        "type": "status",
+        "platforms": {
+          "CS3": {
+            "mqttConnected": true,
+            "version": "1.5.12",
+            "uiAddress": "https://124.123.26.241:3003",
+            "mqttUrl": "tcp://124.123.26.241:1883"
+          },
+          "CS8": {
+            "mqttConnected": true,
+            "version": "2.0",
+            "uiAddress": "https://124.123.26.241:8009",
+            "mqttUrl": "tcp://124.123.26.241:8008"
+          },
+          "CS2": {
+            "mqttConnected": true,
+            "version": "1.5.12",
+            "uiAddress": "https://124.123.26.241:3002",
+            "mqttUrl": "tcp://124.123.26.241:1882"
+          },
+          "test": {
+            "mqttConnected": false,
+            "version": "2.0",
+            "uiAddress": "testtest",
+            "mqttUrl": "tcp://1.1.1.1:1883"
+          }
+        },
+        "devices": {
+          "testing1": {
+            "handlerRunning": false,
+            "agentRunning": false,
+            "version": "1.5.11",
+            "type": "Particle Counter",
+            "model": "climet570",
+            "status": "disconnected",
+            "agentIp": "http://127.0.0.1:8001",
+            "modbusIp": "192.168.1.1"
+          },
+          "testing2": {
+            "handlerRunning": false,
+            "agentRunning": false,
+            "version": "1.5.12",
+            "type": "Particle Counter",
+            "model": "climet570",
+            "status": "disconnected",
+            "agentIp": "http://127.0.0.1:8002",
+            "modbusIp": "192.168.1.1"
+          },
+          "testing3": {
+            "handlerRunning": false,
+            "agentRunning": false,
+            "version": "1.5.12",
+            "type": "Particle Counter",
+            "model": "climet570",
+            "status": "connected",
+            "agentIp": "http://127.0.0.1:8003",
+            "modbusIp": "192.168.1.1"
+          }
+        },
+        "network": {
+          "status": "ok",
+          "name": "UP2",
+          "currenttimeUTC": "Wed, 26 Mar 2025 07:47:02 GMT",
+          "currenttime": "13:17:02 3/26/2025 (IST)",
+          "version": "1.5.2",
+          "PLATFORM_VERSION": "1.5.2",
+          "gatewayId": "2c:cf:67:48:1d:8f",
+          "systemCpu": {
+            "loadAvg": ["1.00", "1.09", "1.04"],
+            "perCpu": ["0.00", "1.11", "0.00", "0.00"],
+            "totalCpu": "0.28"
+          },
+          "totalRamMb": "8.443 gb",
+          "freeRamMb": "7.814 gb",
+          "network": {
+            "eth0": [
+              {
+                "family": "IPv4",
+                "mac": "2c:cf:67:48:1d:8f",
+                "cidr": "172.168.9.98/24",
+                "link": "Active"
+              }
+            ],
+            "wifi": [
+              {
+                "family": "IPv4",
+                "mac": "2c:cf:67:48:1d:90",
+                "cidr": "192.168.0.129/24",
+                "link": "Active",
+                "essid": "INDIA_LAB",
+                "frequency": "5.18 GHz",
+                "apmac": "5E:A6:E6:39:ED:3D",
+                "bitrate": "24 Mb/s",
+                "txpower": "31 dBm",
+                "linkquality": "57/70",
+                "signallevel": "-53 dBm",
+                "txexcessiveretries": "1",
+                "txinvalidmisc": "0"
+              }
+            ]
+          },
+          "totalDisk": "55.602 gb",
+          "freeDisk": "35.908 gb",
+          "freeDiskPercent": "33.0%",
+          "batteryStats": "Not Available"
+        }
+      }
+    },
+    "status": "connected",
+    "host_type": "Supermicro"
+  },
+  {
+    "ip": "192.168.0.130",
+    "deviceType": "apc",
+    "meta": {
+      "192.168.0.130": {
+        "type": "status",
+        "platforms": {
+          "CS3": {
+            "mqttConnected": false,
+            "version": "1.6.0",
+            "uiAddress": "https://125.124.27.242:3003",
+            "mqttUrl": "tcp://125.124.27.242:1883"
+          },
+          "CS8": {
+            "mqttConnected": true,
+            "version": "2.1",
+            "uiAddress": "https://125.124.27.242:8010",
+            "mqttUrl": "tcp://125.124.27.242:8009"
+          },
+          "CS2": {
+            "mqttConnected": true,
+            "version": "1.5.13",
+            "uiAddress": "https://125.124.27.242:3004",
+            "mqttUrl": "tcp://125.124.27.242:1884"
+          },
+          "test": {
+            "mqttConnected": false,
+            "version": "2.0",
+            "uiAddress": "testtest2",
+            "mqttUrl": "tcp://2.2.2.2:1883"
+          }
+        },
+        "devices": {
+          "testing1": {
+            "handlerRunning": true,
+            "agentRunning": true,
+            "version": "1.5.13",
+            "type": "Particle Counter",
+            "status": "disconnected",
+            "model": "climet580",
+            "agentIp": "http://127.0.0.1:9001",
+            "modbusIp": "192.168.2.1"
+          },
+          "testing2": {
+            "handlerRunning": false,
+            "agentRunning": true,
+            "version": "1.5.13",
+            "type": "Particle Counter",
+            "status": "disconnected",
+            "model": "climet580",
+            "agentIp": "http://127.0.0.1:9002",
+            "modbusIp": "192.168.2.1"
+          },
+          "testing3": {
+            "handlerRunning": false,
+            "agentRunning": false,
+            "version": "1.5.13",
+            "type": "Particle Counter",
+            "status": "disconnected",
+            "model": "climet580",
+            "agentIp": "http://127.0.0.1:9003",
+            "modbusIp": "192.168.2.1"
+          }
+        },
+        "network": {
+          "status": "ok",
+          "name": "UP3",
+          "currenttimeUTC": "Thu, 27 Mar 2025 08:15:30 GMT",
+          "currenttime": "13:45:30 3/27/2025 (IST)",
+          "version": "1.6.0",
+          "PLATFORM_VERSION": "1.6.0",
+          "gatewayId": "3d:ef:78:59:2e:9a",
+          "systemCpu": {
+            "loadAvg": ["0.85", "0.95", "1.00"],
+            "perCpu": ["0.10", "0.90", "0.05", "0.00"],
+            "totalCpu": "0.25"
+          },
+          "totalRamMb": "16.000 gb",
+          "freeRamMb": "12.500 gb",
+          "network": {
+            "eth0": [
+              {
+                "family": "IPv4",
+                "mac": "3d:ef:78:59:2e:9a",
+                "cidr": "172.168.10.45/24",
+                "link": "Active"
+              }
+            ],
+            "wifi": [
+              {
+                "family": "IPv4",
+                "mac": "3d:ef:78:59:2e:9b",
+                "cidr": "192.168.0.130/24",
+                "link": "Active",
+                "essid": "LAB_WIFI",
+                "frequency": "2.4 GHz",
+                "apmac": "6F:B7:E7:4A:FE:4E",
+                "bitrate": "54 Mb/s",
+                "txpower": "28 dBm",
+                "linkquality": "60/70",
+                "signallevel": "-50 dBm",
+                "txexcessiveretries": "0",
+                "txinvalidmisc": "1"
+              }
+            ]
+          },
+          "totalDisk": "120.000 gb",
+          "freeDisk": "90.000 gb",
+          "freeDiskPercent": "75.0%",
+          "batteryStats": "Not Available"
+        }
+      }
+    },
+    "status": "disconnected",
+    "host_type": "Puck"
+  },
+  {
+    "ip": "192.168.0.140",
+    "deviceType": "apc",
+    "meta": {
+      "192.168.0.140": {
+        "type": "status",
+        "platforms": {
+          "CS3": {
+            "mqttConnected": true,
+            "version": "1.5.14",
+            "uiAddress": "https://126.125.28.243:3005",
+            "mqttUrl": "tcp://126.125.28.243:1885"
+          },
+          "CS8": {
+            "mqttConnected": false,
+            "version": "2.2",
+            "uiAddress": "https://126.125.28.243:8011",
+            "mqttUrl": "tcp://126.125.28.243:8010"
+          },
+          "CS2": {
+            "mqttConnected": true,
+            "version": "1.5.14",
+            "uiAddress": "https://126.125.28.243:3006",
+            "mqttUrl": "tcp://126.125.28.243:1886"
+          },
+          "test": {
+            "mqttConnected": false,
+            "version": "2.1",
+            "uiAddress": "testtest3",
+            "mqttUrl": "tcp://3.3.3.3:1883"
+          }
+        },
+        "devices": {
+          "testing1": {
+            "handlerRunning": true,
+            "agentRunning": false,
+            "version": "1.5.14",
+            "type": "Particle Counter",
+            "status": "disconnected",
+            "model": "climet590",
+            "agentIp": "http://127.0.0.1:7001",
+            "modbusIp": "192.168.3.1"
+          },
+          "testing2": {
+            "handlerRunning": true,
+            "agentRunning": true,
+            "version": "1.5.14",
+            "type": "Particle Counter",
+            "status": "disconnected",
+            "model": "climet590",
+            "agentIp": "http://127.0.0.1:7002",
+            "modbusIp": "192.168.3.1"
+          },
+          "testing3": {
+            "handlerRunning": false,
+            "agentRunning": true,
+            "version": "1.5.14",
+            "type": "Particle Counter",
+            "status": "disconnected",
+            "model": "climet590",
+            "agentIp": "http://127.0.0.1:7003",
+            "modbusIp": "192.168.3.1"
+          }
+        },
+        "network": {
+          "status": "warning",
+          "name": "UP4",
+          "currenttimeUTC": "Fri, 28 Mar 2025 09:30:15 GMT",
+          "currenttime": "15:00:15 3/28/2025 (IST)",
+          "version": "1.5.3",
+          "PLATFORM_VERSION": "1.5.3",
+          "gatewayId": "4e:gh:89:6a:3f:ab",
+          "systemCpu": {
+            "loadAvg": ["1.20", "1.15", "1.10"],
+            "perCpu": ["0.20", "1.00", "0.10", "0.05"],
+            "totalCpu": "0.35"
+          },
+          "totalRamMb": "32.000 gb",
+          "freeRamMb": "25.000 gb",
+          "network": {
+            "eth0": [
+              {
+                "family": "IPv4",
+                "mac": "4e:gh:89:6a:3f:ab",
+                "cidr": "172.168.11.72/24",
+                "link": "Active"
+              }
+            ],
+            "wifi": [
+              {
+                "family": "IPv4",
+                "mac": "4e:gh:89:6a:3f:ac",
+                "cidr": "192.168.0.140/24",
+                "link": "Active",
+                "essid": "OFFICE_WIFI",
+                "frequency": "5.0 GHz",
+                "apmac": "7G:C8:F8:5B:GF:5F",
+                "bitrate": "48 Mb/s",
+                "txpower": "30 dBm",
+                "linkquality": "55/70",
+                "signallevel": "-55 dBm",
+                "txexcessiveretries": "2",
+                "txinvalidmisc": "0"
+              }
+            ]
+          },
+          "totalDisk": "250.000 gb",
+          "freeDisk": "200.000 gb",
+          "freeDiskPercent": "80.0%",
+          "batteryStats": "Not Available"
+        }
+      }
+    },
+    "status": "connected",
+    "host_type": "Supermicro"
+  }
+]

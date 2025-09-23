@@ -1,0 +1,99 @@
+{
+  "jobID": "2345678",
+  "taskSequence": ["task1", "task2", "task3"],
+  "tasks": [
+    {
+      "taskID": "task1",
+      "taskName": "renderSearch",
+      "visible": true,
+      "search": {
+        "dropdownOptions": [
+          {
+            "label": "Site Name",
+            "value": "name"
+          },
+          {
+            "label": "Alias",
+            "value": "alias"
+          },
+          {
+            "label": "Description",
+            "value": "description"
+          },
+          {
+            "label": "Timezone",
+            "value": "timezone"
+          }
+        ]
+      }
+    },
+    {
+      "taskID": "task2",
+      "taskName": "renderTable",
+      "visible": true,
+      "table": {
+        "columns": [
+          {
+            "title": "Site Name",
+            "page": "sites",
+            "dataIndex": "name"
+          },
+          {
+            "title": "Alias",
+            "page": "sites",
+            "dataIndex": "alias"
+          },
+          {
+            "title": "Description",
+            "page": "sites",
+            "dataIndex": "description"
+          },
+          {
+            "title": "Timezone",
+            "page": "sites",
+            "dataIndex": "timezone"
+          },
+          {
+            "title": "Status",
+            "page": "sites",
+            "dataIndex": "status"
+          },
+          {
+            "title": "Edit",
+            "page": "sites",
+            "dataIndex": "edit",
+            "customColumnCell": {
+              "components": [
+                {
+                  "type": "icon",
+                  "name": "EditOutlined",
+                  "class": "icon-delete",
+                  "event": {
+                    "name": "click",
+                    "handler": "editSiteRecord"
+                  }
+                }
+              ]
+            }
+          }
+        ],
+        "api": {
+          "url": "/pm/site",
+          "authToken": "YOUR_AUTH_TOKEN",
+          "clientId": "phziot"
+        },
+        "defaultOrderBy": "audit_events.id",
+        "defaultLimit": 10,
+        "defaultStrict": "no"
+      }
+    },
+    {
+      "taskID": "task3",
+      "taskName": "renderPagination",
+      "visible": true,
+      "pagination": {
+        "totalCount": 0
+      }
+    }
+  ]
+}

@@ -1,0 +1,78 @@
+{
+  "task_def_id": "CI-3100_0.5_5.0_air_particle_count_cfm_v1.0",
+  "task": [
+    {
+      "taskID": "task1",
+      "taskName": "renderTable",
+      "visible": true,
+      "tables": {
+        "columns": [
+          {
+            "title": "Status",
+            "dataIndex": "status"
+          },
+          {
+            "title": "Sample Type",
+            "dataIndex": "meta.nice_name"
+          },
+          {
+            "title": "Volume",
+            "dataIndex": "data.data.volume",
+            "units": "data.data.volume_units.short"
+          },
+          {
+            "title": "Start Time",
+            "dataIndex": "data.data.start_time",
+            "isDate": true
+          },
+          {
+            "title": "End Time",
+            "dataIndex": "data.data.end_time",
+            "isDate": true
+          },
+          {
+            "title": "Location",
+            "dataIndex": "meta?.input?.location"
+          },
+          {
+            "title": "User",
+            "dataIndex": "data.operator"
+          },
+          {
+            "title": "Job ID",
+            "dataIndex": "id"
+          },
+          {
+            "title": "Instrument Name",
+            "dataIndex": "meta.asset_info.name || data.asset_info.0.name"
+          },
+          {
+            "title": "Model Name",
+            "dataIndex": "meta.asset_info.model_info.name"
+          },
+          {
+            "title": "Firmware",
+            "dataIndex": "meta.asset_info.firmware_version"
+          },
+          {
+            "title": "Site Name",
+            "dataIndex": "meta.asset_info.site_info.name"
+          },
+          {
+            "title": "Last Calibration Date",
+            "dataIndex": "data.asset_info.0.last_calibration_date",
+            "isDate": true
+          },
+          {
+            "title": "Cumulative Data",
+            "dataIndex": "data.measure_info.0.cumulativeData"
+          },
+          {
+            "title": "Differential Data",
+            "dataIndex": "data.measure_info.0.differentialData"
+          }
+        ]
+      }
+    }
+  ]
+}

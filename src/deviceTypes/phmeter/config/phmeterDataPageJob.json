@@ -1,0 +1,65 @@
+{
+  "columns": [
+    {
+      "title": "Sample Status",
+      "dataIndex": "status",
+      "width": "180px"
+    },
+    {
+      "title": "Instrument Name",
+      "dataIndex": "meta.asset_info.name",
+      "width": "130px"
+    },
+    {
+      "title": "Sample Type",
+      "dataIndex": "sample_type_label",
+      "width": "170px"
+    },
+    { "title": "Sample ID", "dataIndex": "id", "width": "100px" },
+    {
+      "title": "Continuous Run ID",
+      "dataIndex": "meta.cr_id",
+      "width": "180px"
+    },
+    { "title": "Source", "dataIndex": "meta.source", "width": "100px" },
+    {
+      "title": "Measure Start Time",
+      "dataIndex": "data.data.start_time",
+      "width": "230px"
+    },
+    {
+      "title": "Measure End Time",
+      "dataIndex": "data.data.end_time",
+      "width": "230px"
+    },
+    { "title": "Exception", "dataIndex": "exception", "width": "100px" }
+  ],
+  "dropdownOptions": [
+    {
+      "label": "Instrument Name",
+      "value": "meta.asset_info.name"
+    },
+    {
+      "label": "Sample Type",
+      "value": "sample_type_label"
+    },
+    {
+      "label": "Sample ID",
+      "value": "id"
+    },
+
+    {
+      "label": "Source",
+      "value": "meta.source"
+    },
+    {
+      "label": "Measure Start Time",
+      "value": "measure_start_time"
+    },
+    {
+      "label": "Measure End Time",
+      "value": "measure_end_time"
+    },
+    { "label": "Run Comment", "value": "meta.cr_id" }
+  ]
+}

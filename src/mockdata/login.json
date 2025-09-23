@@ -1,0 +1,69 @@
+{
+    "workflow": {
+        "id": 1,
+        "name": "Login Workflow",
+        "jobs": [
+            {
+                "id": 1,
+                "name": "Login Job",
+                "tasks": [
+                    {
+                        "id": 1,
+                        "name": "Render Login Form",
+                        "type": "renderForm",
+                        "fields": [
+                            {
+                              "id": "username",
+                              "type": "input",
+                              "label": "User Name",
+                              "is_visible": true,
+                              "read_only": false,
+                              "sequence": 1
+                            },
+                            {
+                              "id": "password",
+                              "type": "password",
+                              "label": "Password",
+                              "is_visible": true,
+                              "read_only": false,
+                              "sequence": 2
+                            },
+                            {
+                              "id": "email",
+                              "type": "email",
+                              "label": "Email",
+                              "is_visible": false,
+                              "read_only": false,
+                              "sequence": 3
+                            },
+                            {
+                              "id": "country_selection",
+                              "type": "select",
+                              "label": "Country",
+                              "is_visible": false,
+                              "read_only": false,
+                              "options": [
+                                { "key": "IN", "value": "India" },
+                                { "key": "US", "value": "United States" }
+                              ],
+                              "default": "IN",
+                              "sequence": 4
+                            }
+                          ]
+                    },
+                    {
+                        "id": 2,
+                        "name": "Do Login",
+                        "type": "authentication",
+                        "nextTasks": [3, "AuditEvent"]
+                    },
+                    {
+                        "id": 3,
+                        "name": "Redirect To Home Page Based On Role",
+                        "type": "validation"
+                    }
+                ]
+            }
+        ]
+    }
+}

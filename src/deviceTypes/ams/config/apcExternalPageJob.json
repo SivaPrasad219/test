@@ -1,0 +1,33 @@
+{
+    "columns": [
+        {
+            "title": "Sample Status",
+            "dataIndex": "status",
+            "width": "150px"
+          },
+      {
+        "title": "File Name",
+        "dataIndex": "file_name"
+      },
+      {
+        "title": "Operator",
+        "dataIndex": "operator"
+      },
+      { "title": "Created By", "dataIndex": "created_by" }
+    ],
+    "dropdownOptions": [
+      {
+        "label": "File Name",
+        "value": "file_name"
+      },
+      {
+        "label": "Operator",
+        "value": "operator"
+      },
+      {
+        "label": "Created By",
+        "value": "created_by"
+      }
+    ]
+  }
+  
