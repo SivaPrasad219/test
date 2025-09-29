@@ -1,58 +1,58 @@
-# This workflow uses actions that are not certified by GitHub.
-# They are provided by a third-party and are governed by
-# separate terms of service, privacy policy, and support
-# documentation.
+# # This workflow uses actions that are not certified by GitHub.
+# # They are provided by a third-party and are governed by
+# # separate terms of service, privacy policy, and support
+# # documentation.
 
-name: trivy
+# name: trivy
 
-on:
-  push:
-    branches: [ "main" ]
-  pull_request:
-    # The branches below must be a subset of the branches above
-    branches: [ "main" ]
-  # schedule:
-  #   - cron: '21 23 * * 5'
+# on:
+#   push:
+#     branches: [ "main" ]
+#   pull_request:
+#     # The branches below must be a subset of the branches above
+#     branches: [ "main" ]
+#   # schedule:
+#   #   - cron: '21 23 * * 5'
 
-permissions:
-  contents: read
+# permissions:
+#   contents: read
 
-jobs:
-  build:
+# jobs:
+#   build:
   
-    permissions:
-      contents: read # for actions/checkout to fetch code
-      security-events: write # for github/codeql-action/upload-sarif to upload SARIF results
-      actions: read # only required for a private repository by github/codeql-action/upload-sarif to get the Action run status
-    name: Build
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
+#     permissions:
+#       contents: read # for actions/checkout to fetch code
+#       security-events: write # for github/codeql-action/upload-sarif to upload SARIF results
+#       actions: read # only required for a private repository by github/codeql-action/upload-sarif to get the Action run status
+#     name: Build
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: Checkout code
+#         uses: actions/checkout@v4
 
-      - name: Log in to DockerHub
-        uses: docker/login-action@v3
-        with:
-          username: ${{ secrets.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_TOKEN }}
+#       - name: Log in to DockerHub
+#         uses: docker/login-action@v3
+#         with:
+#           username: ${{ secrets.DOCKERHUB_USERNAME }}
+#           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
-      - name: Build Docker image
-        run: docker build -t docker.io/9492925563/my-app:${{ github.sha }} .
+#       - name: Build Docker image
+#         run: docker build -t docker.io/9492925563/my-app:${{ github.sha }} .
 
-      - name: Run Trivy scan
-        uses: aquasecurity/trivy-action@7b7aa264d83dc58691451798b4d117d53d21edfe
-        with:
-          image-ref: 'docker.io/9492925563/my-app:${{ github.sha }}'
-          format: 'template'
-          template: '@/contrib/sarif.tpl'
-          output: 'trivy-results.sarif'
-          severity: 'CRITICAL,HIGH'
-        env:
-          TRIVY_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
-          TRIVY_PASSWORD: ${{ secrets.DOCKERHUB_TOKEN }}
+#       - name: Run Trivy scan
+#         uses: aquasecurity/trivy-action@7b7aa264d83dc58691451798b4d117d53d21edfe
+#         with:
+#           image-ref: 'docker.io/9492925563/my-app:${{ github.sha }}'
+#           format: 'template'
+#           template: '@/contrib/sarif.tpl'
+#           output: 'trivy-results.sarif'
+#           severity: 'CRITICAL,HIGH'
+#         env:
+#           TRIVY_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
+#           TRIVY_PASSWORD: ${{ secrets.DOCKERHUB_TOKEN }}
 
-      - name: Upload Trivy scan results
-        uses: github/codeql-action/upload-sarif@v3
-        with:
-          sarif_file: 'trivy-results.sarif'
+#       - name: Upload Trivy scan results
+#         uses: github/codeql-action/upload-sarif@v3
+#         with:
+#           sarif_file: 'trivy-results.sarif'
           
