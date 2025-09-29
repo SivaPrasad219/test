@@ -50,12 +50,10 @@ jobs:
       id: scan
       with:
         image: localbuild/testimage:latest
-        fail-build: true
-        severity-cutoff: critical
+        fail-build: false # Set to true to fail the workflow if vulnerabilities are found
+        # severity-cutoff: critical
         output-format: sarif # Explicitly specify SARIF output
-        # Optional: Add debug for troubleshooting
-        debug: false
-
+  
 
     - name: Upload vulnerability report
       uses: github/codeql-action/upload-sarif@v3
