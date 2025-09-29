@@ -38,15 +38,23 @@ jobs:
     - name: Install Grype
       run: |
         curl -sSfL https://get.anchore.io/grype | sudo sh -s -- -b /usr/local/bin
+    - name: Delete old Grype database
+      run: grype db delete
+
     - name: Update Grype Database
       run: grype db update
+
     - name: Run the Anchore Grype scan action
       uses: anchore/scan-action@d5aa5b6cb9414b0c7771438046ff5bcfa2854ed7
       id: scan
+      env:
+        GRYPE_DB_MAX_ALLOWED_BUILT_AGE: 720h  # or any suitable longer duration
+        GRYPE_DB_VALIDATE_AGE: 'false'
       with:
         image: "localbuild/testimage:latest"
         fail-build: true
         severity-cutoff: critical
+
     - name: Upload vulnerability report
       uses: github/codeql-action/upload-sarif@v3
       with:
