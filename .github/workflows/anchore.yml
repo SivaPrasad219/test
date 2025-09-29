@@ -35,25 +35,27 @@ jobs:
       uses: actions/checkout@v4
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag localbuild/testimage:latest
-    - name: Install Grype
-      run: |
-        curl -sSfL https://get.anchore.io/grype | sudo sh -s -- -b /usr/local/bin
-    - name: Delete old Grype database
-      run: grype db delete
+    # - name: Install Grype
+    #   run: |
+    #     curl -sSfL https://get.anchore.io/grype | sudo sh -s -- -b /usr/local/bin
 
-    - name: Update Grype Database
-      run: grype db update
+    # - name: Delete old Grype database
+    #   run: grype db delete
+
+    # - name: Update Grype Database
+    #   run: grype db update
 
     - name: Run the Anchore Grype scan action
-      uses: anchore/scan-action@d5aa5b6cb9414b0c7771438046ff5bcfa2854ed7
+      uses: anchore/scan-action@v3 # Use the latest stable version
       id: scan
-      env:
-        GRYPE_DB_MAX_ALLOWED_BUILT_AGE: 720h  # or any suitable longer duration
-        GRYPE_DB_VALIDATE_AGE: 'false'
       with:
-        image: "localbuild/testimage:latest"
+        image: localbuild/testimage:latest
         fail-build: true
         severity-cutoff: critical
+        output-format: sarif # Explicitly specify SARIF output
+        # Optional: Add debug for troubleshooting
+        debug: false
+
 
     - name: Upload vulnerability report
       uses: github/codeql-action/upload-sarif@v3
