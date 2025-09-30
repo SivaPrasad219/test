@@ -1,26 +1,67 @@
-on:
-  workflow_dispatch: {}
-  pull_request: {}
-  push:
-    branches:
-    - main
-    - master
-    paths:
-    - .github/workflows/semgrep.yml
-  schedule:
-  # random HH:MM to avoid a load spike on GitHub Actions at 00:00
-  - cron: 43 14 * * *
+# GitHub Actions workflow to run Semgrep for static code analysis.
+# Scans code on push and pull requests to the main branch, and weekly on Fridays.
+# Requires SEMGREP_APP_TOKEN and SEMGREP_DEPLOYMENT_ID secrets set in GitHub.
+
 name: Semgrep
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+  schedule:
+    - cron: '31 3 * * 5' # Runs every Friday at 3:31 AM UTC
+
+permissions:
+  contents: read # For actions/checkout to fetch code
+  security-events: write # For uploading SARIF results to GitHub
+  actions: read # For accessing Action run status in private repositories
+
 jobs:
   semgrep:
-    name: semgrep/ci
+    name: Scan
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
-    env:
-      SEMGREP_APP_TOKEN: ${{ secrets.SEMGREP_APP_TOKEN }}
-    container:
-      image: semgrep/semgrep
     steps:
-    - uses: actions/checkout@v4
-    - run: semgrep ci
+      # Checkout the repository code
+      - uses: actions/checkout@v4
+
+      # Set up Python (required for Semgrep)
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      # Cache Semgrep dependencies to speed up scans
+      - name: Cache Semgrep rules
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/semgrep
+          key: ${{ runner.os }}-semgrep-${{ hashFiles('.semgrep/**') }}
+          restore-keys: |
+            ${{ runner.os }}-semgrep-
+
+      # Run Semgrep scan using cloud configuration
+      - name: Run Semgrep
+        uses: returntocorp/semgrep-action@v1 # Use latest version tag
+        with:
+          publishToken: ${{ secrets.SEMGREP_APP_TOKEN }}
+          publishDeployment: ${{ secrets.SEMGREP_DEPLOYMENT_ID }}
+          generateSarif: "1"
+          # Optional: Add specific rules or config (e.g., --config p/security-audit)
+          # config: "p/security-audit p/owasp-top-ten"
+
+      # Check Semgrep results for critical findings and fail if necessary
+      - name: Check Semgrep results
+        run: |
+          if grep -q '"severity": "ERROR"' semgrep.sarif; then
+            echo "Critical Semgrep findings detected. Failing the build."
+            exit 1
+          fi
+        if: always()
+
+      # Upload SARIF file to GitHub for security tab integration
+      - name: Upload SARIF file
+        uses: github/codeql-action/upload-sarif@v3
+        with:
+          sarif_file: semgrep.sarif
+        if: always()
