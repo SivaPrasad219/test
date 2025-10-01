@@ -40,12 +40,6 @@ jobs:
         uses: snyk/actions/setup@806182742461562b67788a64410098c9d9b96adb
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
-      # - name: Set up Node.js
-      #   uses: actions/setup-node@v4
-      #   with:
-      #     node-version: 20
-      # - name: Install dependencies
-      #   run: npm install 
       - name: Snyk Code test
         run: snyk code test --sarif > snyk-code.sarif || true
         env:
