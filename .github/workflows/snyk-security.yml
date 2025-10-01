@@ -45,7 +45,7 @@ jobs:
         with:
           node-version: 20
       - name: Install dependencies
-        run: npm install
+        run: npm install --legacy-peer-deps
       - name: Snyk Code test
         run: snyk code test --sarif > snyk-code.sarif || true
         env:
