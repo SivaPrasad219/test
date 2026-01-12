@@ -1,72 +1,8 @@
-# README #
+Sonar Qube Token
 
-This repository contains the code for the das_ui application.
-
-### What is this repository for? ###
-
-* Quick summary
- It serves as the user interface for a specific das.
-
-* Version
-Version: 0.1.0
-
-### How do I get set up? ###
-
-To set up the project, follow these steps:
-
-To set up the project, follow these steps:
-
-1. **Clone the repository**: Clone the repository to your local 
-
-   git clone https://github.com/yourusername/das_ui.git
+New token "sqp_a5f43b87e7a57d78b1c0828347536c01e6250ac8" has been created. Make sure you copy it now, you won't be able to see it again!
 
 
-2. **Install Dependencies: Install project dependencies by running**
+sonar runner command
 
-    npm install
-
-3. **Build for Production**
-
-    npm run build
-
-4. **How to Serve the Project**
-
-    npm install -g serve
-    serve -s dist
-
-
-What is this repository for?
-This repository contains the code for the das_ui application. It serves as the user interface for a specific project or service.
-
-Version: 0.1.0
-How do I get set up?
-
-
-To set up the project, follow these steps:
-
-1. Summary of set up: Clone the repository to your local machine.
-2. Configuration: Make sure you have Node.js and npm installed - node v18.16.0.
-3. Dependencies: Install project dependencies by running npm install.
-4. Database configuration: This project does not involve database configuration as it's a UI project.
-5. How to run tests: Run unit tests using npm run test:unit.
-6. Deployment instructions: For deployment, build the project using npm run build and deploy the generated files.
-
-### Run your unit tests
-npm run test:unit
-
-### Lints and fixes files
-npm run lint
-
-
-### Contribution guidelines ###
-
-* Writing tests
-* Code review
-* Other guidelines
-
-### Who do I talk to? ###
-
-* Repo owner or admin
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+docker run -d -v /tmp:/tmp -v /var/run/docker.sock:/var/run/docker.sock -v /var/lib/docker/containers:/var/lib/docker/containers:ro -e ACCOUNT_UUID={4c6feea6-ab14-40bd-a579-e26df4fc094f} -e REPOSITORY_UUID={aeb8517c-f606-4217-8e14-99ca9da5c775} -e RUNNER_UUID={e7b6a873-6180-579b-81e2-3aa7ed5ee6cd} -e RUNTIME_PREREQUISITES_ENABLED=true -e OAUTH_CLIENT_ID=F9FCAjrKr9UCm5uW3KZj93uNVG7zw8zR -e OAUTH_CLIENT_SECRET=ATOAUKkpjFcN-g_BNkVA8ML0M0tVLflG0nFrNzRfTVQdxzEw3b1b12-NuIBFkKWQLlQ4BB04FDA5 -e WORKING_DIRECTORY=/tmp --name runner-asset-manager docker-public.packages.atlassian.com/sox/atlassian/bitbucket-pipelines-runner --restart=always
