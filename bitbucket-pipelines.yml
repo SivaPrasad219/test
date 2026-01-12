@@ -28,8 +28,8 @@ pipelines:
               SONAR_HOST_URL: ${SONAR_HOST_URL}
               SONAR_TOKEN: ${SONAR_TOKEN}
               EXTRA_ARGS: >-
-                -Dsonar.projectKey=asset-manager
-                -Dsonar.projectName=asset-manager
+                -Dsonar.projectKey=test
+                -Dsonar.projectName=test
                 -Dsonar.sources=.
                 -Dsonar.exclusions=**/node_modules/**,**/dist/**,**/coverage/**,**/tests/**  # exclude coverage folder too
                 -Dsonar.javascript.lcov.reportPaths=./coverage/lcov.info   # ← THIS IS THE MOST IMPORTANT LINE!
