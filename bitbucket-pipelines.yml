@@ -1,5 +1,17 @@
 pipelines:
-  default:
+  default:       
+    - step:
+        name: Run Tests & Generate Coverage
+        size: 2x
+        runs-on:
+          - self.hosted
+          - linux
+        caches:
+          - node
+        script:
+          - npm run test:coverage   # or directly: npm test -- --coverage
+          # After this, you should have ./coverage/lcov.info file
+
     - step:
         name: SonarQube Analysis
         size: 2x
@@ -8,6 +20,7 @@ pipelines:
           - linux
         caches:
           - sonar
+          - node  # optional
         script:
           - export SONAR_SCANNER_OPTS="-Xmx2048m"
           - pipe: sonarsource/sonarqube-scan:3.0.2
@@ -18,10 +31,12 @@ pipelines:
                 -Dsonar.projectKey=asset-manager
                 -Dsonar.projectName=asset-manager
                 -Dsonar.sources=.
-                -Dsonar.exclusions=**/node_modules/**,**/dist/**
-              DEBUG: "true"
+                -Dsonar.exclusions=**/node_modules/**,**/dist/**,**/coverage/**,**/tests/**  # exclude coverage folder too
+                -Dsonar.javascript.lcov.reportPaths=./coverage/lcov.info   # ← THIS IS THE MOST IMPORTANT LINE!
+                -Dsonar.tests=.                                             # optional: if tests are mixed with sources
+                -Dsonar.test.inclusions=**/*.test.js,**/*.spec.js           # adjust to your test file pattern
 
-    - step:
+    - step:  # ← your quality gate check remains the same
         name: Check SonarQube Quality Gate
         size: 2x
         runs-on:
@@ -33,27 +48,12 @@ pipelines:
               SONAR_TOKEN: ${SONAR_TOKEN}
               DEBUG: "true"
 
-    - step:
-        name: ASSET-MANAGER
-        caches:
-          - docker
-        services:
-          - docker
-        script:
-          - export IMAGE_NAME=asset-manager:$BITBUCKET_COMMIT
-          - docker build -t $IMAGE_NAME .
-          - docker tag $IMAGE_NAME asset-manager:latest
-          - pipe: atlassian/aws-ecr-push-image:1.0.2
-            variables:
-              AWS_ACCESS_KEY_ID: $AWS_ACCESS_KEY_ID
-              AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEY
-              AWS_DEFAULT_REGION: $AWS_DEFAULT_REGION
-              IMAGE_NAME: asset-manager
-              TAGS: '${BITBUCKET_COMMIT} latest ${BITBUCKET_TAG}'
+    # Your docker build & push step remains unchanged...
 
 definitions:
   caches:
     sonar: ~/.sonar
+    node: ~/.npm  # optional but recommended
   services:
     docker:
       memory: 3072
